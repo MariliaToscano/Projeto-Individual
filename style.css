@@ -1,0 +1,109 @@
+/* NAV BAR */
+
+html,
+body {
+    overflow-x: hidden; 
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Rubik", sans-serif; 
+    background-size: cover;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    opacity: 0.8;
+}
+
+.logo {
+    width: 20%;
+    justify-self: center;
+}
+
+.lado {
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    margin: 1.5rem;
+
+}
+
+.header a {
+    text-decoration: none; 
+    color: white;
+}
+
+.topoPagina {
+    background-image: url(imagens/pagInicial/haloownestVistaDeLonge.png);
+    background-size: cover;
+    height: 40rem;
+}
+
+.tudoTopo{
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    justify-self: center;
+    padding: 5%;
+    margin: 10%;
+}
+.quirrel{
+    width: 35%;
+}
+
+.tudoJogo{
+    margin:5%;
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    justify-self: center;
+}
+
+.hkTeamCherry {
+    width: 40%;
+}
+
+
+.tudoMetroidvania {
+    background-image: url(imagens/pagInicial/metroidvaniaFundo.png);
+    background-size: cover;
+    height: 30rem;
+    display: flex;
+    color: white;
+}
+.textoMetroidvania {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10rem;
+    padding: 10%;
+    text-align:justify;
+}
+
+.intro{
+    margin:5%;
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    justify-self: center;
+}
+
+.hkVagando {
+    width: 40%;
+}
+
+.sePerderFundo {
+    background-image: url(imagens/pagInicial/fundoDirtmouthCortado.png);
+    background-size: cover;
+    height: 80rem;
+}
+.sePerder {
+    opacity: 2;
+}
