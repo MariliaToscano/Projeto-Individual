@@ -1,62 +1,91 @@
--- Arquivo de apoio, caso você queira criar tabelas como as aqui criadas para a API funcionar.
--- Você precisa executar os comandos no banco de dados para criar as tabelas,
--- ter este arquivo aqui não significa que a tabela em seu BD estará como abaixo!
+create database if not exists hallownet;
+use hallownet;
 
-/*
-comandos para mysql server
-*/
+create table usuario(
+id int primary key auto_increment,
+nomeCompleto varchar(60),
+username varchar(15) unique key,
+email varchar(40) unique key,
+senha varchar(80)
+)auto_increment=100;
 
-CREATE DATABASE aquatech;
-
-USE aquatech;
-
-CREATE TABLE empresa (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	razao_social VARCHAR(50),
-	cnpj CHAR(14),
-	codigo_ativacao VARCHAR(50)
+create table conquistas(
+id int primary key auto_increment,
+nome varchar(45)
 );
 
-CREATE TABLE usuario (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	nome VARCHAR(50),
-	email VARCHAR(50),
-	senha VARCHAR(50),
-	fk_empresa INT,
-	FOREIGN KEY (fk_empresa) REFERENCES empresa(id)
+create table usuario_conquistas(
+fkusuario int,
+fkconquista int,
+dataHorario datetime,
+status boolean default false,
+primary key (fkusuario,fkconquista),
+foreign key (fkusuario) references usuario(id),
+foreign key (fkconquista) references conquistas(id)
 );
 
-CREATE TABLE aviso (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	titulo VARCHAR(100),
-	descricao VARCHAR(150),
-	fk_usuario INT,
-	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
-);
-
-create table aquario (
-/* em nossa regra de negócio, um aquario tem apenas um sensor */
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	descricao VARCHAR(300),
-	fk_empresa INT,
-	FOREIGN KEY (fk_empresa) REFERENCES empresa(id)
-);
-
-/* esta tabela deve estar de acordo com o que está em INSERT de sua API do arduino - dat-acqu-ino */
-
-create table medida (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	dht11_umidade DECIMAL,
-	dht11_temperatura DECIMAL,
-	luminosidade DECIMAL,
-	lm35_temperatura DECIMAL,
-	chave TINYINT,
-	momento DATETIME,
-	fk_aquario INT,
-	FOREIGN KEY (fk_aquario) REFERENCES aquario(id)
-);
-
-insert into empresa (razao_social, codigo_ativacao) values ('Empresa 1', 'ED145B');
-insert into empresa (razao_social, codigo_ativacao) values ('Empresa 2', 'A1B2C3');
-insert into aquario (descricao, fk_empresa) values ('Aquário de Estrela-do-mar', 1);
-insert into aquario (descricao, fk_empresa) values ('Aquário de Peixe-dourado', 2);
+insert into conquistas(nome) 
+	value('Afortunado'),
+		('Encantado'),
+        ('Abençoado'),
+        ('Protegido'),
+        ('Mascarado'),
+        ('Cheio de Alma'),
+        ('Alma do mundo'),
+        ('Falsidade'),
+        ('Força'),
+        ('Teste de Resolução'),
+        ('Prova de Resolução'),
+        ('Iluminação'),
+        ('Mortalidade'),
+        ('Libertação'),
+        ('Paz'),
+        ('Honra'),
+        ('Respeito'),
+        ('Obssessão'),
+        ('Execução'),
+        ('Rivalidade'),
+        ('Sintonia'),
+        ('Despertar'),
+        ('Ascenção'),
+        ('Amigo das Larvas'),
+        ('Metamorfose'),
+        ('Conexão'),
+        ('Esperança'),
+        ('Negligência'),
+        ('Testemunha'),
+        ('Pureza'),
+        ('Casal Feliz'),
+        ('Consolação'),
+        ('Vazio'),
+        ('Professora'),
+        ('Observador'),
+        ('Besta'),
+        ('Cartógrafo'),
+        ('Conclusão'),
+        ('Conclusão Pura'),
+        ('Finallização Rápida'),
+        ('Caçador Habilidoso'),
+        ('Verdadeiro Caçador'),
+        ('Alma de Aço'),
+        ('Coração de Aço'),
+        ('Speedrun 1'),
+        ('Speedrun 2'),
+        ('Guerreiro'),
+        ('Conquistador'),
+        ('Tolo'),
+        ('O Cavaleiro Vazio'),
+        ('Irmãos Selados'),
+        ('Não Sonhe Mais'),
+        ('Passagem da Era'),
+        ('Memória'),
+        ('Romance Sombrio'),
+        ('Grande Atuação'),
+        ('Ritual'),
+        ('Banimento'),
+        ('Irmandade'),
+        ('Inspiração'),
+        ('Foco'),
+        ('Alma e Sombra'),
+        ('Abrace o Vazio');
+        
