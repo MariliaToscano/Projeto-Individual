@@ -207,11 +207,45 @@ ul li:hover ul.dropdown {
 .sePerderFundo {
     background-image: url(imagens/pagInicial/fundoDirtmouthCortado.png);
     background-size: cover;
-    height: 80rem;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
 }
-.sePerder {
-    opacity: 2;
+.sePerderFundo .sePerderTexto{
+    justify-content: flex-start;
+    align-self: center;
 }
+
+.sePerderFundo img{
+    justify-content: center;
+    align-self: center;
+    align-self: center;
+    width: 18rem;
+}
+.imagem{
+    display: flex;
+    justify-content: center;
+
+}
+.margem{
+    margin-top: 4rem;
+}
+.sePerder{
+    background-color: rgb(0, 0, 0,0.5);
+    color: white;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    border-radius: 20px;
+    width: 60%;
+    padding: 2rem;
+}
+
+
+.sePerderTexto h4{
+    font-family: "Share Tech", sans-serif;
+}
+
 
 /* LOGIN */
 .paginaTamanho{
