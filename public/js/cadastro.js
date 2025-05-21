@@ -63,8 +63,8 @@ function cadastrar() {
 }
 
 function login(){
-        var emailVar = ipt_emailLogin.value;
-        var senhaVar = ipt_senhaLogin.value;
+        var emailVar = document.getElementById("ipt_emailLogin").value;
+        var senhaVar = document.getElementById("ipt_senhaLogin").value;
 
         if (emailVar == "" || senhaVar == "") {
             alert ('Campos em branco');
@@ -101,9 +101,10 @@ function login(){
                   
                     
 
-               
-                       window.location.href = "posLogin.html";
-                 
+                    setTimeout(function () {
+                        console.log("Redirecionando agora!");
+                       window.location.href = "./posLogin.html";
+                        }, 1000);
 
                 });
                 
@@ -121,6 +122,6 @@ function login(){
             console.log(erro);
         })
 
-  
+        return false;
 
 }

@@ -45,9 +45,9 @@ function autenticar(email, senha) {
 
 
 module.exports = {
-    cadastrar,
     cadastrar2,
     buscarIdUsuarioPorEmail,
+    cadastrar,
     autenticar
 
 };
