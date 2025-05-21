@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'fonteJogo';
-    src: url('Trajan\ Pro\ Regular.ttf');
+    src: url('/public/assets/Trajan\ Pro\ Regular.ttf');
 } 
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playwrite+DK+Loopet:wght@100..400&family=Share+Tech&display=swap');

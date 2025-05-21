@@ -8,8 +8,8 @@ router.post("/cadastrar2", function (req, res) {
     usuarioController.cadastrar2(req, res);
 });
 
-router.get("/buscar-id-transportadora/:nome", function (req, res) {
-    usuarioController.buscarIdTransportadora(req, res);
+router.get("/buscar-id-usuario/:email", function (req, res) {
+    usuarioController.buscarIdUsuario(req, res);
 });
 
 

@@ -10,37 +10,38 @@
 
 <body>
     <div class="paginaTamanho">
-   
-        <div class="topoPagina">
-        <div class="header">
-        <div class="lado">
-                <ul>
-                    <li><a href="index.html"><b>Página Inicial</b></a></li>
-                    <li><a href="/login.html">Saiba Mais</a></li>
-                    <li><a href="curiosidades.html">Curiosidades</a></li> 
-                </ul>
-            </div>
-            <img class="logo" src="./imagens/logo.png">
-            <div class="lado">
-                <ul>
-                    <li>
-                        <a href="#">Para Jogadores ▾</a>
-                        <ul class="dropdown">
-                            <li><a href="#">Mapa</a></li>
-                            <li><a href="#">Conquistas</a></li>
-                        </ul>
-                    </li>
-                          <li><a href="/login.html">Login</a></li>
-                <li><a href="cadastro.html">Cadastro</a></li> 
-                </ul>
-           
-            </div>
 
-        </div>
+        <div class="topoPagina">
+            <div class="header">
+                <div class="lado">
+                    <ul>
+                        <li><a href="index.html"><b>Página Inicial</b></a></li>
+                        <li><a href="/login.html">Saiba Mais</a></li>
+                        <li><a href="curiosidades.html">Curiosidades</a></li>
+                    </ul>
+                </div>
+                <img class="logo" src="./imagens/logo.png">
+                <div class="lado">
+                    <ul>
+                        <li>
+                            <a href="#">Para Jogadores ▾</a>
+                            <ul class="dropdown">
+                                <li><a href="#">Mapa</a></li>
+                                <li><a href="#">Conquistas</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/login.html">Login</a></li>
+                        <li><a href="cadastro.html">Cadastro</a></li>
+                    </ul>
+
+                </div>
+
+            </div>
 
             <div class="retangulo">
-        
-                    <h2>Faça seu cadastro</h2>
+
+                <h2>Faça seu cadastro</h2>
+                <form>
                     <p>Nome Completo:</p>
                     <input type="text" id="ipt_nomeCompleto" required>
                     <p>Username:</p>
@@ -52,6 +53,8 @@
                     <p>Confirmar Senha:</p>
                     <input type="password" id="ipt_confirmarSenha" required>
                     <p><i><a href="login.html">Já fez seu cadastro? Faça seu login</a></i></p>
+                    <button onclick="cadastrar()"></button>
+                </form>
 
 
 
@@ -59,5 +62,6 @@
         </div>
     </div>
 </body>
+<script src="./js/cadastro.js"></script>
 
 </html>

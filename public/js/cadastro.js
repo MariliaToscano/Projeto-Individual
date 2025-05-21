@@ -1,25 +1,25 @@
 function cadastrar() {
 
-    var nomeVar = ipt_nomeCompleto.value;
-    var usernameVar = ipt_Username.value;
-    var emailVar = ipt_emailCadastro.value;
-    var senhaVar = ipt_senhaCadastro.value;
-    var confirmarSenhaVar = ipt_confirmarSenha.value;
+    var nomeVar = document.getElementById("ipt_nomeCompleto").value;
+    var usernameVar = document.getElementById("ipt_Username").value;
+    var email = document.getElementById("ipt_emailCadastro").value;
+    var senhaVar = document.getElementById("ipt_senhaCadastro").value;
+    var confirmarSenhaVar = document.getElementById("ipt_confirmarSenha").value;
 
 
     if (senhaVar != confirmarSenhaVar) {
         alert("As senhas não coincidem.");
         return;
     }
- 
 
-    fetch("/usuarios/cadastrar", {
+
+    fetch("/usuarios/cadastrar2", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
             nomeServer: nomeVar,
             usernameServer: usernameVar,
-            emailServer: emailVar,
+            emailServer: email,
             senhaServer: senhaVar,
         }),
     })
@@ -38,18 +38,15 @@ function cadastrar() {
             return resposta2.json();
         })
         .then((dados) => {
-            const idTransportadora = dados.idtransportadora;
+            const idUsuario = dados.id;
 
             return fetch("/usuarios/cadastrar", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
-                    // seria a função para cadastrar a tabela usuario_conquistas
-                    emailServer: email,
-                    senhaServer: senha,
-                    idTransportadora: idTransportadora
+                idUsuario: idUsuario
                 }),
-            });
+            })
         })
         .then((resposta3) => {
             if (!resposta3.ok) {
@@ -57,10 +54,12 @@ function cadastrar() {
             }
 
             alert("Cadastro realizado com sucesso!");
-            window.location.href = "posLogin.html";
+            window.location.href = "login.html";
         })
         .catch((erro) => {
             console.error("Erro:", erro);
             alert("Erro no cadastro. Verifique os campos e tente novamente.");
         });
 }
+
+

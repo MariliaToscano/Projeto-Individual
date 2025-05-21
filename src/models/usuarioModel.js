@@ -1,18 +1,18 @@
 var database = require("../database/config")
 
 
-function cadastrar2(nome, telefone, cnpj) {
+function cadastrar2(nome, username, email, senha) {
     var instrucaoSql = `
-        INSERT INTO transportadora (nome, cnpj, telefone, ativo) 
-        VALUES ('${nome}', '${cnpj}', '${telefone}', true);
+        INSERT INTO usuario (nomeCompleto, username, email, senha) 
+        VALUES ('${nome}', '${username}', '${email}', '${senha}');
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
 
-function buscarTransportadoraPorNome(nome){
-var instrucao = `
-        select idtransportadora from transportadora where nome like '${nome}';
+function buscarIdUsuarioPorEmail(email) {
+    var instrucao = `
+        select id from usuario where email like '${email}';
     `;
     return database.executar(instrucao);
 }
@@ -20,13 +20,19 @@ var instrucao = `
 
 
 
-function cadastrar(email, senha, idTransportadora) {
-    var instrucaoSql = `
-        INSERT INTO usuario (email, senha, administrador, ativo, idTransportadora) 
-        VALUES ('${email}', '${senha}', true, true, ${idTransportadora});
-    `;
-    console.log("Executando a instrução SQL: \n" + instrucaoSql);
-    return database.executar(instrucaoSql);
+function cadastrar(idUsuario) {
+    const vetorInsert = []
+    for (var i = 1; i <= 63; i++) {
+        var instrucaoSql = `
+        INSERT INTO usuario_conquistas (fkusuario, fkconquista) 
+        VALUES ('${idUsuario}', '${i}');`;
+
+        vetorInsert.push(database.executar(instrucaoSql))
+    }
+        console.log("Executando a instrução SQL: \n" + instrucaoSql);
+        return Promise.all(vetorInsert) ;
+    
+    
 }
 
 function autenticar(email, senha) {
@@ -41,7 +47,7 @@ function autenticar(email, senha) {
 module.exports = {
     cadastrar,
     cadastrar2,
-    buscarTransportadoraPorNome,
+    buscarIdUsuarioPorEmail,
     autenticar
 
 };

@@ -2,56 +2,55 @@ var usuarioModel = require("../models/usuarioModel");
 
 function cadastrar2(req, res) {
     var nome = req.body.nomeServer;
-    var cnpj = req.body.cnpjServer;
-    var telefone = req.body.telefoneserver;
+    var username = req.body.usernameServer;
+    var email = req.body.emailServer;
+    var senha = req.body.senhaServer
 
     if (!nome) {
         res.status(400).send("O nome está indefinido!");
-    } else if (!cnpj) {
-        res.status(400).send("O CNPJ está indefinido!");
-    } else if (!telefone) {
-        res.status(400).send("O telefone está indefinido!");
-    } else {
-        usuarioModel.cadastrar2(nome, telefone, cnpj)
+    } else if (!username) {
+        res.status(400).send("O username está indefinido!");
+    } else if (!email) {
+        res.status(400).send("O email está indefinido!");
+    } else if(!senha){
+        res.status(400).send("A senha está indefinida!");
+    }else{
+        usuarioModel.cadastrar2(nome, username, email, senha)
             .then(resultado => {
-                res.json({ idTransportadora: resultado.insertId }); // retorna o ID da transportadora
+                res.json({ idUsuario: resultado.insertId });
             })
             .catch(erro => {
-                console.error("Erro ao cadastrar transportadora:", erro.sqlMessage);
+                console.error("Erro ao cadastrar idusuário", erro.sqlMessage);
                 res.status(500).json(erro.sqlMessage);
             });
     }
 }
 
-function buscarIdTransportadora(req, res) {
-    const nome = req.params.nome;
+function buscarIdUsuario(req, res) {
+    const email = req.params.email;
 
-    usuarioModel.buscarTransportadoraPorNome(nome)
+    usuarioModel.buscarIdUsuarioPorEmail(email)
         .then(resultado => {
             if (resultado.length === 0) {
-                res.status(404).send("Transportadora não encontrada!");
+                res.status(404).send("Email não encontrado!");
             } else {
-                res.json(resultado[0]); // Retorna o objeto com idtransportadora
+                res.json(resultado[0]);
             }
         })
         .catch(erro => {
-            console.error("Erro ao buscar transportadora:", erro);
+            console.error("Erro ao buscar idusuario:", erro);
             res.status(500).json(erro.sqlMessage);
         });
 }
 
-
-
 function cadastrar(req, res) {
-    
-    var email = req.body.emailServer;
-    var senha = req.body.senhaServer;
-    var idTransportadora = req.body.idTransportadora;
 
-    if (!email || !senha || !idTransportadora) {
+    var idUsuario = req.body.idUsuario;
+
+    if (!idUsuario) {
         res.status(400).send("Campos obrigatórios não foram preenchidos!");
     } else {
-        usuarioModel.cadastrar(email, senha, idTransportadora)
+        usuarioModel.cadastrar(idUsuario)
             .then(resultadoCadastro => {
                 res.json({ idUsuario: resultadoCadastro.insertId });
             })
@@ -61,6 +60,7 @@ function cadastrar(req, res) {
             });
     }
 }
+
 
 function autenticar(req, res) {
     
@@ -101,6 +101,6 @@ function autenticar(req, res) {
 module.exports = {
     cadastrar,
     cadastrar2,
-    buscarIdTransportadora,
+    buscarIdUsuario,
     autenticar
 }
