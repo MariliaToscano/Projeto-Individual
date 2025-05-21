@@ -93,7 +93,7 @@ function login(){
                 resposta.json().then(json => {
                     console.log(json);
                     console.log(JSON.stringify(json));
-                    sessionStorage.ID_USUARIO = json.idUsuario;
+                    sessionStorage.ID = json.id;
                     sessionStorage.NOME_USUARIO = json.nomeCompleto;
                     sessionStorage.USERNAME = json.username
                     sessionStorage.EMAIL_USUARIO = json.email;
@@ -101,8 +101,8 @@ function login(){
                   
                     
 
-                    
-                       window.location.href = "index.html";
+               
+                       window.location.href = "posLogin.html";
                  
 
                 });

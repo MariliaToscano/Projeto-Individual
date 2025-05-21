@@ -37,7 +37,7 @@ function cadastrar(idUsuario) {
 
 function autenticar(email, senha) {
     var instrucaoSql = `
-        SELECT id as idUsuario, nomeCompleto, username, email FROM usuario WHERE email = '${email}' AND senha = '${senha}';
+        SELECT id, nomeCompleto, username, email FROM usuario WHERE email = '${email}' AND senha = '${senha}';
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
