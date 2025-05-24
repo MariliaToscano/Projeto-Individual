@@ -83,7 +83,7 @@ function autenticar(req, res) {
                                console.log(resultadoAutenticar);
 
                                     res.json({
-                                        id: resultadoAutenticar[0].id,
+                                        idUsuario: resultadoAutenticar[0].idUsuario,
                                         nome: resultadoAutenticar[0].nome,
                                         username: resultadoAutenticar[0].username,
                                         email: resultadoAutenticar[0].email,

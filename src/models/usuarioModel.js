@@ -3,7 +3,7 @@ var database = require("../database/config")
 
 function cadastrar2(nome, username, email, senha) {
     var instrucaoSql = `
-        INSERT INTO usuario (nomeCompleto, username, email, senha) 
+        INSERT INTO usuario (nome, username, email, senha) 
         VALUES ('${nome}', '${username}', '${email}', '${senha}');
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
@@ -12,7 +12,7 @@ function cadastrar2(nome, username, email, senha) {
 
 function buscarIdUsuarioPorEmail(email) {
     var instrucao = `
-        select id from usuario where email like '${email}';
+        select idUsuario from usuario where email like '${email}';
     `;
     return database.executar(instrucao);
 }
@@ -37,7 +37,7 @@ function cadastrar(idUsuario) {
 
 function autenticar(email, senha) {
     var instrucaoSql = `
-        SELECT id, nomeCompleto, username, email FROM usuario WHERE email = '${email}' AND senha = '${senha}';
+        SELECT idUsuario, nome, username, email FROM usuario WHERE email = '${email}' AND senha = '${senha}';
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);

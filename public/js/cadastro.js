@@ -38,7 +38,7 @@ function cadastrar() {
             return resposta2.json();
         })
         .then((dados) => {
-            const idUsuario = dados.id;
+            const idUsuario = dados.idUsuario;
 
             return fetch("/usuarios/cadastrar", {
                 method: "POST",
@@ -62,66 +62,4 @@ function cadastrar() {
         });
 }
 
-function login(){
-        var emailVar = document.getElementById("ipt_emailLogin").value;
-        var senhaVar = document.getElementById("ipt_senhaLogin").value;
 
-        if (emailVar == "" || senhaVar == "") {
-            alert ('Campos em branco');
-            return false;
-        }
-        
-
-        console.log("FORM LOGIN: ", emailVar);
-        console.log("FORM SENHA: ", senhaVar);
-
-        fetch("/usuarios/autenticar", { 
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                emailServer: emailVar,
-                senhaServer: senhaVar
-            })
-        }).then(function (resposta) {
-            console.log("ESTOU NO THEN DO entrar()!")
-
-            if (resposta.ok) {
-                console.log(resposta);
-
-                resposta.json().then(json => {
-                    console.log(json);
-                    console.log(JSON.stringify(json));
-                    sessionStorage.ID = json.id;
-                    sessionStorage.NOME_USUARIO = json.nomeCompleto;
-                    sessionStorage.USERNAME = json.username
-                    sessionStorage.EMAIL_USUARIO = json.email;
-                    
-                  
-                    
-
-                    setTimeout(function () {
-                        console.log("Redirecionando agora!");
-                       window.location.href = "./posLogin.html";
-                        }, 1000);
-
-                });
-                
-
-            } else {
-
-                console.log("Houve um erro ao tentar realizar o login!");
-
-                resposta.text().then(texto => {
-                    console.error(texto);
-                });
-            }
-
-        }).catch(function (erro) {
-            console.log(erro);
-        })
-
-        return false;
-
-}
