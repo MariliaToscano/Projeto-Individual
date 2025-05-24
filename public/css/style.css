@@ -93,7 +93,7 @@ ul li:hover ul.dropdown {
 }
 
 .topoPagina {
-    background-image: url(imagens/pagInicial/haloownestVistaDeLonge.png);
+    background-image: url("../assets/pagInicial/haloownestVistaDeLonge.png");
     background-size: cover;
     height: 120vh;
     width: 100vw;
@@ -157,7 +157,7 @@ ul li:hover ul.dropdown {
     display: flex;
 }
 .tudoMetroidvania {
-    background-image: url(imagens/pagInicial/metroidvaniaFundo.png);
+    background-image: url("../assets/pagInicial/metroidvaniaFundo.png");
     background-size: cover;
     flex-direction: column;
     align-items: center;
@@ -205,7 +205,7 @@ ul li:hover ul.dropdown {
 }
 
 .sePerderFundo {
-    background-image: url(imagens/pagInicial/fundoDirtmouthCortado.png);
+    background-image: url("../assets/pagInicial/fundoDirtmouthCortado.png");
     background-size: cover;
     width: 100vw;
     display: flex;
@@ -254,7 +254,7 @@ ul li:hover ul.dropdown {
     display: flex;
 }
 .topoPaginaLogin {
-    background-image: url(imagens/login/fundoLogin.jpg);
+    background-image: url(../assets/login/fundoLogin.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -286,7 +286,7 @@ ul li:hover ul.dropdown {
   
 }
 .imagemFundoCuriosidades{
-    background-image: url(imagens/fundos.png);
+    background-image: url(../assets/imagens/fundos.png);
     background-size: cover;
     background-position: center;
 }
@@ -342,7 +342,7 @@ ul li:hover ul.dropdown {
 }
 
 .imagemFundoConquistas {
-    background-image: url(imagens/fundoConquistas.jpg);
+    background-image: url(../assets/imagens/fundoConquistas.jpg);
  
     background-repeat: repeat;
 }
