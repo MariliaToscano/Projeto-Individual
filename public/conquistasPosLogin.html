@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HallowNet - Conquistas</title>
- 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link rel="stylesheet" href="./css/style.css">
 
 </head>
@@ -36,8 +36,12 @@
                 </ul>
 
             </div>
+           
 
         </div>
+         <div class="dashboard1" style="width: 500px;">
+                <canvas id="myChart"></canvas>
+            </div>
       <div class="retanguloCnquistas">
         <div class="conteudoConquistas">
           <div class="tituloConquista">
@@ -731,5 +735,31 @@
     
      <script src="js/conquista.js"></script>
 </body>
+<script>
+  const data = {
+  labels: [
+    'Concluídas',
+    'Não Consluídas'
+  ],
+  datasets: [{
+    label: 'My First Dataset',
+    data: [10, 53],
+    backgroundColor: [
+      'rgb(39, 55, 77)',
+      'rgb(157, 178, 191)'
+    ],
+    hoverOffset: 4
+  }]
+};
+      const config = {
+        type: 'doughnut',
+        data: data,
+    };
+     const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+    )
+  
 
+</script>
 </html>

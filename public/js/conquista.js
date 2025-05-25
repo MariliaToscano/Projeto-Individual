@@ -40,3 +40,4 @@ function carregarCheckbox() {
 function checarSemLogin(){
     alert('Faça Login para salvar suas conquistas realizadas!!')
 }
+
