@@ -10,7 +10,7 @@
 
 </head>
 
-<body onload="carregarCheckbox().then(() => checar())"  style="background-color: black;">
+<body onload="carregarCheckbox().then(() => obterDados()).then(()=> checar())"  style="background-color: black;">
   <div class="TamanhoConquistas">
 
     <div class="imagemFundoConquistas">
@@ -40,7 +40,18 @@
 
         </div>
          <div class="dashboard1" style="width: 500px;">
-                <canvas id="myChart"></canvas>
+          <div class="graficoRosquinha">
+              <canvas id="myChart"></canvas>
+          </div>  
+            <div id="div_kpiConquistaAlcancada" class="kpiConquistaAlcancada">
+              <h4>Conquistas Alcançadas:</h4>
+            </div>
+            <div id="div_kpiConquistaFalta" class="kpiConquistaFalta">
+                <h4>Conquistas Restantes:</h4>
+            </div> 
+            <div class="ultimaConquista">
+              <h4>Última Conquista:</h4>
+            </div>
             </div>
       <div class="retanguloCnquistas">
         <div class="conteudoConquistas">
@@ -736,14 +747,42 @@
      <script src="js/conquista.js"></script>
 </body>
 <script>
+
+let myChart = null
+
+  function obterDados(){
+    console.log('Entrei!')
+
+    const fkusuario = sessionStorage.ID;
+
+   fetch(`/dashboards/contarStatus/${fkusuario}`)
+        .then(res => res.json())
+        .then(dados => {
+            plotarGraficoRosquinha(dados[0]);
+            kpi(dados[0])
+        })
+        .catch(err => console.error("Erro ao obter dados do gráfico:", err));
+  }
+
+  function kpi(){
+
+
+  }
+
+  function plotarGraficoRosquinha(dados){ 
+    const ctx = document.getElementById('myChart')
+
+       if (myChart) {
+        myChart.destroy();
+    }
   const data = {
   labels: [
     'Concluídas',
-    'Não Consluídas'
+    'Não Concluídas'
   ],
   datasets: [{
-    label: 'My First Dataset',
-    data: [10, 53],
+    label: 'Conquistas',
+    data: [dados.concluido, dados.naoConcluido ],
     backgroundColor: [
       'rgb(39, 55, 77)',
       'rgb(157, 178, 191)'
@@ -755,11 +794,11 @@
         type: 'doughnut',
         data: data,
     };
-     const myChart = new Chart(
-        document.getElementById('myChart'),
+     myChart = new Chart(
+        ctx,
         config
     )
   
-
+  }
 </script>
 </html>
