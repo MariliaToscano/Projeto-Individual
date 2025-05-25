@@ -1,3 +1,4 @@
+
 var database = require ("../database/config")
 
 
@@ -11,9 +12,21 @@ function contarStatus( fkusuario){
     `
     return database.executar(instrucaoSql);
 }
-
+function ultimaConquistaBuscar(fkusuario){
+    var instrucaoSql = `
+        SELECT fkconquista, nome, imagem, DATE_FORMAT(dataHorario, '%d/%m/%Y %H:%i')
+        FROM usuario_conquistas 
+        INNER JOIN conquistas ON conquistas.id = usuario_conquistas.fkconquista
+        WHERE fkusuario = '${fkusuario}' AND dataHorario = (
+            SELECT MAX(dataHorario)
+            FROM usuario_conquistas
+            WHERE fkusuario = '${fkusuario}');
+    `
+    return database.executar(instrucaoSql);
+}
 
 
 module.exports = {
-  contarStatus
+  contarStatus,
+  ultimaConquistaBuscar
 };

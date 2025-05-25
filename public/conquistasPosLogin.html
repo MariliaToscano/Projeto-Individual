@@ -43,14 +43,17 @@
           <div class="graficoRosquinha">
               <canvas id="myChart"></canvas>
           </div>  
-            <div id="div_kpiConquistaAlcancada" class="kpiConquistaAlcancada">
+            <div  class="kpiConquistaAlcancada" style="color: white;">
               <h4>Conquistas Alcançadas:</h4>
+              <div id="div_kpiConquistaAlcancada"></div>
             </div>
-            <div id="div_kpiConquistaFalta" class="kpiConquistaFalta">
+            <div  class="kpiConquistaFalta" style="color: white;">
                 <h4>Conquistas Restantes:</h4>
+                <div id="div_kpiConquistaFalta"></div>
             </div> 
-            <div class="ultimaConquista">
+            <div class="ultimaConquista"  style="color: white;">
               <h4>Última Conquista:</h4>
+              <div id="div_kpiUltimaConquista"></div>
             </div>
             </div>
       <div class="retanguloCnquistas">
@@ -761,11 +764,27 @@ let myChart = null
             plotarGraficoRosquinha(dados[0]);
             kpi(dados[0])
         })
+
+    .then((resposta2) =>{
+      fetch(`/dashboards/ultimaConquistaBuscar/${fkusuario}`)
+        .then(res => res.json())
+        .then(dados2 => {
+          ultimaConquista(dados2[0])
+        })
+    })
         .catch(err => console.error("Erro ao obter dados do gráfico:", err));
+
   }
 
-  function kpi(){
+  function ultimaConquista(dados2){
+    div_kpiUltimaConquista.innerHTML = dados2.imagem + dados2.nome + dados2.dataHorario
+    
+  }
 
+  function kpi(dados){
+      div_kpiConquistaAlcancada.innerHTML = dados.concluido
+
+      div_kpiConquistaFalta.innerHTML = dados.naoConcluido
 
   }
 
