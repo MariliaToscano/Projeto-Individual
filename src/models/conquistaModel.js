@@ -14,7 +14,16 @@ function marcarTrue(fkconquista, fkusuario){
     return database.executar(instrucaoSql);
 }
 
+function buscarStatus(fkusuario){
+        var instrucaoSql = `
+        SELECT status FROM usuario_conquistas WHERE fkusuario = '${fkusuario}' ORDER BY fkconquista ASC;`
+    
+        console.log("Executando a instrução SQL: \n" + instrucaoSql);
+        return database.executar(instrucaoSql);
+}
+
 module.exports = {
     marcarFalse,
+    buscarStatus,
     marcarTrue
 };

@@ -17,6 +17,26 @@ console.log("ID do usuário:", sessionStorage.ID)
     )
 }
 
+function carregarCheckbox() {
+    const fkusuario = sessionStorage.ID;
+
+    return fetch(`/conquistas/buscarStatus/${fkusuario}`)
+        .then(resposta => resposta.json())
+        .then(dados => {
+            for (var i = 0; i < dados.length; i++) {
+                const conquista = dados[i];
+                if (conquista.status === 1) {
+                    const checkbox = document.querySelector(`.conquistaCheck[value="${i+1}"]`);
+        
+                    checkbox.checked = true;   
+                }
+            }
+        })
+        .catch(erro => {
+            console.error("Erro ao carregar checkboxes:", erro);
+        });
+}
+
 function checarSemLogin(){
     alert('Faça Login para salvar suas conquistas realizadas!!')
 }
