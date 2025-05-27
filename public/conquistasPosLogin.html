@@ -5,57 +5,52 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HallowNet - Conquistas</title>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link rel="stylesheet" href="./css/style.css">
 
 </head>
 
-<body onload="carregarCheckbox().then(() => obterDados()).then(()=> checar())"  style="background-color: black;">
+<body onload="carregarCheckbox().then(() => obterDados()).then(()=> checar())" style="background-color: black;">
   <div class="TamanhoConquistas">
 
     <div class="imagemFundoConquistas">
-      <div class="header">
-            <div class="lado">
-                <ul>
-                    <li><a href="index.html"><b>Página Inicial</b></a></li>
-                    <li><a href="login.html">Saiba Mais</a></li>
-                    <li><a href="curiosidades.html">Curiosidades</a></li>
-                </ul>
-            </div>
-            <img class="logo" src="./assets/imagens/logo.png">
-            <div class="lado">
-                <ul>
-                    <li>
-                        <a href="#">Para Jogadores ▾</a>
-                        <ul class="dropdown">
-                            <li><a href="#">Mapa</a></li>
-                            <li><a href="/conquistasSemLogin.html">Conquistas</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="index.html" onclick="limparSessao()">Sair</a></li>
-                </ul>
+       <div class="headerTamanho">
+            <div class="header">
+                <a href="posLogin.html">Página Inicial</a>
+                <a href="login.html">Saiba Mais</a>
+                <a href="CuriosidadesPosLogin.html">Curiosidades</a>
+
+
+                <img class="logo" src="./assets/imagens/logo.png">
+
+
+                <a href="conquistasPosLogin.html"><b>· Conquistas</b></a>
+
+                <a href="#">Dados Gerais</a>
+
+                <a href="index.html" onclick="limparSessao()">Sair</a>
+                
 
             </div>
-           
 
         </div>
-         <div class="dashboard1" style="width: 500px;">
-          <div class="graficoRosquinha">
-              <canvas id="myChart"></canvas>
-          </div>  
-            <div  class="kpiConquistaAlcancada" style="color: white;">
-              <h4>Conquistas Alcançadas:</h4>
-              <div id="div_kpiConquistaAlcancada"></div>
-            </div>
-            <div  class="kpiConquistaFalta" style="color: white;">
-                <h4>Conquistas Restantes:</h4>
-                <div id="div_kpiConquistaFalta"></div>
-            </div> 
-            <div class="ultimaConquista"  style="color: white;">
-              <h4>Última Conquista:</h4>
-              <div id="div_kpiUltimaConquista"></div>
-            </div>
-            </div>
+      <div class="dashboard1" style="width: 500px;">
+        <div class="graficoRosquinha">
+          <canvas id="myChart"></canvas>
+        </div>
+        <div class="kpiConquistaAlcancada" style="color: white;">
+          <h4>Conquistas Alcançadas:</h4>
+          <div id="div_kpiConquistaAlcancada"></div>
+        </div>
+        <div class="kpiConquistaFalta" style="color: white;">
+          <h4>Conquistas Restantes:</h4>
+          <div id="div_kpiConquistaFalta"></div>
+        </div>
+        <div class="ultimaConquista" style="color: white;">
+          <h4>Última Conquista:</h4>
+          <div id="div_kpiUltimaConquista"></div>
+        </div>
+      </div>
       <div class="retanguloCnquistas">
         <div class="conteudoConquistas">
           <div class="tituloConquista">
@@ -75,7 +70,7 @@
 
             </div>
             <div class="conquista">
-              <input type="checkbox" class="conquistaCheck"  value="2" >
+              <input type="checkbox" class="conquistaCheck" value="2">
               <img src="./assets/conquistas/Achievement_Enchanted.png">
               <div class="conquistaTexto">
                 <h3>Encantado</h3>
@@ -124,7 +119,7 @@
           <div class="divisao">
             <h1>Fragmentos de Receptáculo</h1>
             <div class="conquista">
-              <input type="checkbox" class="conquistaCheck"  value="6">
+              <input type="checkbox" class="conquistaCheck" value="6">
               <img src="./assets/conquistas/Achievement_Soulful.png">
               <div class="conquistaTexto">
                 <h3>Cheio de Alma</h3>
@@ -746,78 +741,79 @@
       </div>
 
     </div>
-    
-     <script src="js/conquista.js"></script>
+
+    <script src="js/conquista.js"></script>
 </body>
 <script>
 
-let myChart = null
+  let myChart = null
 
-  function obterDados(){
+  function obterDados() {
     console.log('Entrei!')
 
     const fkusuario = sessionStorage.ID;
 
-   fetch(`/dashboards/contarStatus/${fkusuario}`)
-        .then(res => res.json())
-        .then(dados => {
-            plotarGraficoRosquinha(dados[0]);
-            kpi(dados[0])
-        })
+    fetch(`/dashboards/contarStatus/${fkusuario}`)
+      .then(res => res.json())
+      .then(dados => {
+        plotarGraficoRosquinha(dados[0]);
+        kpi(dados[0])
+      })
 
-    .then((resposta2) =>{
-      fetch(`/dashboards/ultimaConquistaBuscar/${fkusuario}`)
-        .then(res => res.json())
-        .then(dados2 => {
-          ultimaConquista(dados2[0])
-        })
-    })
-        .catch(err => console.error("Erro ao obter dados do gráfico:", err));
+      .then((resposta2) => {
+        fetch(`/dashboards/ultimaConquistaBuscar/${fkusuario}`)
+          .then(res => res.json())
+          .then(dados2 => {
+            ultimaConquista(dados2[0])
+          })
+      })
+      .catch(err => console.error("Erro ao obter dados do gráfico:", err));
 
   }
 
-  function ultimaConquista(dados2){
+  function ultimaConquista(dados2) {
     div_kpiUltimaConquista.innerHTML = dados2.imagem + dados2.nome + dados2.dataHorario
-    
-  }
-
-  function kpi(dados){
-      div_kpiConquistaAlcancada.innerHTML = dados.concluido
-
-      div_kpiConquistaFalta.innerHTML = dados.naoConcluido
 
   }
 
-  function plotarGraficoRosquinha(dados){ 
+  function kpi(dados) {
+    div_kpiConquistaAlcancada.innerHTML = dados.concluido
+
+    div_kpiConquistaFalta.innerHTML = dados.naoConcluido
+
+  }
+
+  function plotarGraficoRosquinha(dados) {
     const ctx = document.getElementById('myChart')
 
-       if (myChart) {
-        myChart.destroy();
+    if (myChart) {
+      myChart.destroy();
     }
-  const data = {
-  labels: [
-    'Concluídas',
-    'Não Concluídas'
-  ],
-  datasets: [{
-    label: 'Conquistas',
-    data: [dados.concluido, dados.naoConcluido ],
-    backgroundColor: [
-      'rgb(39, 55, 77)',
-      'rgb(157, 178, 191)'
-    ],
-    hoverOffset: 4
-  }]
-};
-      const config = {
-        type: 'doughnut',
-        data: data,
+    const data = {
+      labels: [
+        'Concluídas',
+        'Não Concluídas'
+      ],
+      datasets: [{
+        label: 'Conquistas',
+        data: [dados.concluido, dados.naoConcluido],
+        backgroundColor: [
+          'rgb(39, 55, 77)',
+          'rgb(157, 178, 191)'
+        ],
+        hoverOffset: 4
+      }]
     };
-     myChart = new Chart(
-        ctx,
-        config
+    const config = {
+      type: 'doughnut',
+      data: data,
+    };
+    myChart = new Chart(
+      ctx,
+      config
     )
-  
+
   }
 </script>
+
 </html>

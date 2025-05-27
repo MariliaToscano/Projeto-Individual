@@ -11,48 +11,44 @@
 
 <body>
     <div class="paginaTamanho">
-   
+
         <div class="topoPagina">
-        <div class="header">
-        <div class="lado">
-                <ul>
-                    <li><a href="index.html"><b>Página Inicial</b></a></li>
-                    <li><a href="login.html">Saiba Mais</a></li>
-                    <li><a href="curiosidades.html">Curiosidades</a></li> 
-                </ul>
-            </div>
-            <img class="logo" src="./assets/imagens/logo.png">
-            <div class="lado">
-                <ul>
-                    <li>
-                        <a href="#">Para Jogadores ▾</a>
-                        <ul class="dropdown">
-                            <li><a href="#">Mapa</a></li>
-                            <li><a href="#">Conquistas</a></li>
-                        </ul>
-                    </li>
-                          <li><a href="login.html">Login</a></li>
-                <li><a href="cadastro.html">Cadastro</a></li> 
-                </ul>
-           
+            <div class="headerTamanho">
+                <div class="header">
+                    <a href="index.html">Página Inicial</a>
+                    <a href="login.html">Saiba Mais</a>
+                    <a href="curiosidades.html">Curiosidades</a>
+
+
+                    <img class="logo" src="./assets/imagens/logo.png">
+
+
+                    <a href="conquistasSemLogin.html">Conquistas</a>
+
+
+                    <a href="login.html"><b>· Login</b></a>
+                    <a href="cadastro.html">Cadastro</a>
+
+                </div>
+
             </div>
 
-        </div>
+
 
             <div class="retangulo">
-        
-                    <h2>Faça seu Login</h2>
-                <form > 
+
+                <h2>Faça seu Login</h2>
+                <form>
                     <p>Email:</p>
                     <input type="text" id="ipt_emailLogin" required>
                     <p>Senha:</p>
                     <input type="password" id="ipt_senhaLogin" required>
-                    <p><i><a href="cadastro.html">Ainda não é cadastrado? Faça seu cadastro</a></i></p> 
+                    <p><i><a href="cadastro.html">Ainda não é cadastrado? Faça seu cadastro</a></i></p>
                     <button type="button" onclick="login()">Fazer Login</button>
                 </form>
-                      
-               
-                    
+
+
+
 
 
 
@@ -61,20 +57,20 @@
     </div>
 </body>
 <script>
-    function login(){
+    function login() {
         var emailVar = ipt_emailLogin.value;
         var senhaVar = ipt_senhaLogin.value;
 
         if (emailVar == "" || senhaVar == "") {
-            alert ('Campos em branco');
+            alert('Campos em branco');
             return false;
         }
-        
+
 
         console.log("FORM LOGIN: ", emailVar);
         console.log("FORM SENHA: ", senhaVar);
 
-        fetch("/usuarios/autenticar", { 
+        fetch("/usuarios/autenticar", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -96,16 +92,16 @@
                     sessionStorage.NOME_COMPLETO = json.nome;
                     sessionStorage.USERNAME = json.username
                     sessionStorage.EMAIL_USUARIO = json.email;
-                    
-                  
-                    
 
-                   
-                       window.location.href = "./posLogin.html";
-                       
+
+
+
+
+                    window.location.href = "./posLogin.html";
+
 
                 });
-                
+
 
             } else {
 
@@ -122,6 +118,7 @@
 
         return false;
 
-}
+    }
 </script>
+
 </html>
