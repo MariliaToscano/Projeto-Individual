@@ -12,7 +12,7 @@ function cadastrar2(nome, username, email, senha) {
 
 function buscarIdUsuarioPorEmail(email) {
     var instrucao = `
-        select idUsuario from usuario where email like '${email}';
+        select idUsuario from usuario where email = '${email}';
     `;
     return database.executar(instrucao);
 }

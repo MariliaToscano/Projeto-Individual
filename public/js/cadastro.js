@@ -1,4 +1,4 @@
-function cadastrar() {
+function cadastrar1() {
 
     var nomeVar = document.getElementById("ipt_nomeCompleto").value;
     var usernameVar = document.getElementById("ipt_Username").value;
@@ -19,7 +19,7 @@ function cadastrar() {
         body: JSON.stringify({
             nomeServer: nomeVar,
             usernameServer: usernameVar,
-            email: email,
+            emailServer: email,
             senhaServer: senhaVar,
         }),
     })
@@ -30,25 +30,25 @@ function cadastrar() {
 
            
             return fetch(`/usuarios/buscar-id-usuario/${email}`);
-            
+           
            
         })
         .then((resposta2) => {
             if (!resposta2.ok) {
                 throw new Error("Erro ao buscar ID do usuario");
-            }
+           }
             
-            return resposta2.json();
-        })
+          return resposta2.json();
+       })
         .then((dados) => {
-            let idUsuario = dados.idUsuario;
+            const idUsuario = dados.idUsuario;
 
 
-            return fetch("/usuarios/cadastrar", {
+            return fetch(`/usuarios/cadastrar/${idUsuario}`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
-                idUsuario: idUsuario
+                idUsuario
                 }),
             })
         })

@@ -3,7 +3,7 @@ var usuarioModel = require("../models/usuarioModel");
 function cadastrar2(req, res) {
     var nome = req.body.nomeServer;
     var username = req.body.usernameServer;
-    var email = req.body.email;
+    var email = req.body.emailServer;
     var senha = req.body.senhaServer
 
     if (!nome) {
@@ -28,9 +28,11 @@ function cadastrar2(req, res) {
 
 function buscarIdUsuario(req, res) {
     const email = req.params.email;
+    console.log("Email recebido para busca:", email);
 
     usuarioModel.buscarIdUsuarioPorEmail(email)
         .then(resultado => {
+            console.log("Resultado da consulta:", resultado);
             if (resultado.length === 0) {
                 res.status(404).send("Email não encontrado!");
             } else {
