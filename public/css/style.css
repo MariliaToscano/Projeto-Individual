@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'fonteJogo';
     src: url('../assets/Trajan_Pro_Regular.ttf');
-} 
+}
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playwrite+DK+Loopet:wght@100..400&family=Share+Tech&display=swap');
 
@@ -11,26 +11,27 @@
 html,
 body {
     font-family: 'fonteJogo', sans-serif;
-    overflow-x: hidden; 
+    overflow-x: hidden;
     width: 100%;
     margin: 0;
     padding: 0;
 }
 
-.headerTamanho{
+.headerTamanho {
     display: flex;
-    background-color: rgba(0, 0, 0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     height: 20vh;
-    flex-direction: row;  
+    flex-direction: row;
 }
-.header{
+
+.header {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 }
 
-.header a{
-    font-size:1rem;
+.header a {
+    font-size: 1rem;
 }
 
 
@@ -40,7 +41,7 @@ body {
     margin: 7%;
 }
 
-.lado{
+.lado {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -53,11 +54,11 @@ body {
 
 
 .header a {
-    text-decoration: none; 
+    text-decoration: none;
     color: white;
 }
 
-.tudoTopo{
+.tudoTopo {
     color: rgb(255, 255, 255);
     display: flex;
     align-items: flex-start;
@@ -68,36 +69,43 @@ body {
 .topoPagina {
     background-image: url("../assets/pagInicial/haloownestVistaDeLonge.png");
     background-size: cover;
-    height: 120vh;
+    height: 140vh;
     width: 100vw;
 }
 
 
-.quirrel{
-    width: 25vw;
+.quirrel {
+    width: 20vw;
     margin-top: 10%;
-    margin-left: 10%;
+    margin-left: 15%;
 }
-.textoTopoPagina{
+
+.textoTopoPagina {
     align-self: center;
     width: 50%;
     height: 50%;
 }
-.textoTopoPagina h1{
-    font-size: 3rem;
+
+.textoTopoPagina h1 {
+    font-size: 2.2rem;
 }
-.textoTopoPagina h3{
-   font-family: "Share Tech", sans-serif;
+
+.textoTopoPagina h3 {
+    font-family: "Share Tech", sans-serif;
+    font-size: 1rem;
+    font-weight: 200;
 }
-.paginaTamanhoSobreJogo{
+
+.paginaTamanhoSobreJogo {
     width: 100vw;
-    height: 90vh;
+    height: 120vh;
     display: flex;
-    background-color: rgb(55, 57, 73);
+    background: #45496b;
+    background: linear-gradient(90deg, rgba(69, 73, 107, 1) 0%, rgba(39, 42, 71, 1) 50%, rgba(22, 25, 46, 1) 100%);
     background-size: cover;
 }
 
-.tudoJogo{
+.tudoJogo {
     display: flex;
     flex-direction: row;
     align-self: center;
@@ -105,39 +113,74 @@ body {
     margin: 5%;
 }
 
-.video{
-    width: 150rem;
-    height: 30rem;
+.video {
+    width: 100rem;
+    height: 20rem;
     margin-right: 3rem;
     margin-left: 1rem;
+    margin-top: 3rem;
 }
+
 .hkTeamCherry {
     width: 40%;
 }
-.textoSobreJogo h1{
+
+.textoSobreJogo h1 {
+    color: rgb(121, 121, 142);
     font-size: 3rem;
     font-weight: 900;
 }
-.textoSobreJogo p{
+
+.textoSobreJogo p {
     font-family: "Share Tech", sans-serif;
-    width: 45%;
-    font-size: x-large;
+    width: 40%;
+    font-size: medium;
+    color: rgb(168, 169, 197);
 }
 
-.tamanhoMetroidvania{
+.tamanhoMetroidvania {
     width: 100vw;
-    height: 90vh;
+    height: 120vh;
     display: flex;
 }
+
 .tudoMetroidvania {
-    background-image: url("../assets/pagInicial/metroidvaniaFundo.png");
-    background-size: cover;
+    background-image: url("../assets/pagInicial/MetroidVaniaFundoNovo.jpg");
+    background-size:cover;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     display: flex;
     color: rgb(255, 255, 255);
 }
+.imagemMetroid img{
+    width: 7rem;
+    border-radius: 15px;
+}
+.imagemCastelvania img{
+    width: 7rem;
+    border-radius: 15px;
+    margin-left: 1rem;
+}
+.imagemCastelvania{
+    margin-left: 3rem;
+}
+.imagemCastelvania p{
+    font-family: "Share Tech", sans-serif;
+    color: #d9d9dc;
+
+}
+.imagemMetroid p{
+        font-family: "Share Tech", sans-serif;
+    color: #d9d9dc;
+
+}
+.imagensMetroidvania{
+    display: flex;
+    flex-direction: row;
+    margin-left: 3rem;
+}
+
 .textoMetroidvania {
     display: flex;
     flex-direction: column;
@@ -145,87 +188,128 @@ body {
     align-items: center;
     justify-self: center;
     align-content: center;
-    text-align:justify;
-    width: 50%;
+    text-align: justify;
+    width: 70%;
 
 }
-.textoMetroidvania h4{
+
+.textoMetroidvania h4 {
     font-family: "Share Tech", sans-serif;
-    margin-bottom: 20%;
-    font-size: 2rem;
-}
-.textoMetroidvania h1{
     margin-bottom: 10%;
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.textoMetroidvania h1 {
+    margin-bottom: 1%;
     
+
 }
 
+.tamanhoIntro{
+      width: 100vw;
+    height: 130vh;
+    display: flex;
+     background: #45496b;
+    background: linear-gradient(90deg, rgba(22, 25, 46, 1) 0%, rgba(39, 42, 71, 1) 50%, rgb(11, 13, 25) 100%);
+}
 
-
-.introTexto p{
+.introTexto p {
     font-family: "Share Tech", sans-serif;
+    color: rgb(168, 169, 197);
+    width: 90%;
+    justify-self: center;
+    text-align:justify;
+    font-weight: 100;
+}
+.introTexto h1{
+    justify-self: center;
+    margin-bottom: 3rem;
 }
 
-.intro{
-    margin:5%;
+.intro {
+    margin: 5%;
     display: flex;
     flex-direction: row;
     align-self: center;
     justify-self: center;
+    color: rgb(121, 121, 142);
 }
 
 .hkVagando {
     width: 40%;
+    border-radius: 30px;
 }
 
-.sePerderFundo {
-    background-image: url("../assets/pagInicial/fundoDirtmouthCortado.png");
-    background-size: cover;
-    width: 100vw;
+.sePerderTamanho{
+    width: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
 }
-.sePerderFundo .sePerderTexto{
-    justify-content: flex-start;
-    align-self: center;
+.sePerderFundo {
+    background-image: url("../assets/pagInicial/fundoDirtmouthCortado.png");
+    background-size: cover;
+
+    flex-direction: column;
+}
+.sePerderTexto{
+    padding: 2rem;
+    text-align: justify;
 }
 
-.sePerderFundo img{
+
+.sePerderFundo img {
     justify-content: center;
     align-self: center;
-    align-self: center;
-    width: 18rem;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    width: 13%;
 }
-.imagem{
+.imagem {
     display: flex;
     justify-content: center;
 
 }
-.margem{
-    margin-top: 4rem;
-}
-.sePerder{
-    background-color: rgb(0, 0, 0,0.5);
+
+
+.sePerder {
+    background-color: rgb(0, 0, 0, 0.5);
     color: white;
     display: flex;
     align-self: center;
     justify-self: center;
     border-radius: 20px;
-    width: 60%;
-    padding: 2rem;
+    margin-top: 5rem;
+    width: 70%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
 }
 
 
-.sePerderTexto h4{
+
+.sePerderTexto h4 {
     font-family: "Share Tech", sans-serif;
+    font-weight: 300;
+
+}
+.sePerderTexto h1 {
+    font-weight: 300;
+    align-self: center;
+    justify-self: center;
 }
 
 
 /* LOGIN */
-.paginaTamanho{
+.paginaTamanho {
     width: 100vw;
     height: 100vh;
     display: flex;
 }
+
 .topoPaginaLogin {
     background-image: url(../assets/login/fundoLogin.jpg);
     background-size: cover;
@@ -237,9 +321,9 @@ body {
     width: 100%;
 }
 
-.retangulo{
+.retangulo {
     color: white;
-    background-color: rgb(0, 0, 0,0.5); 
+    background-color: rgb(0, 0, 0, 0.5);
     border-radius: 2rem;
     display: flex;
     flex-direction: column;
@@ -253,62 +337,74 @@ body {
 
 /* Curiosidades */
 
-.paginaTamanhoCuriosidades{
+.paginaTamanhoCuriosidades {
     width: 100vw;
     height: 100vh;
-  
+
 }
-.imagemFundoCuriosidades{
+
+.imagemFundoCuriosidades {
     background-image: url(../assets/imagens/fundos.png);
     background-size: cover;
     background-position: center;
 }
 
-.curiosidadesConteudo{
+.curiosidadesConteudo {
     color: white;
     font-family: "Share Tech", sans-serif;
-    background: rgb(0, 0, 0,0.5);
+    background: rgb(0, 0, 0, 0.5);
     border-radius: 5%;
     width: 80%;
     align-self: center;
     justify-self: center;
     margin-top: 8vw;
 }
-.curiosidadeTexto{
+
+.curiosidadeTexto {
     width: 70vw;
     padding: 3rem;
     justify-self: center;
 
 }
-.tituloCuriosidades{
+
+.tituloCuriosidades {
     justify-self: center;
     font-family: 'fonteJogo', sans-serif;
 }
-.topico{
+
+.topico {
     margin: 5%;
 }
 
-.footer{
-    background: rgb(0, 0, 0, 0.8);
+.footerTamanho{
+    height: 10vh;
+    width: 100%;
+    display: flex;
+}
+
+.footer {
+    background: rgb(0, 0, 0);
     display: flex;
     flex-direction: row;
     color: white;
     font-family: "Share Tech", sans-serif;
+    width: 100vw;
 }
 
-.emailFooter{
+.emailFooter {
     width: 3vw;
     height: 5vh;
     margin-left: 2%;
     align-self: center;
 }
-.footer p{
+
+.footer p {
     margin: 2%
 }
 
 /*CONQUISTAS*/
 
-.TamanhoConquistas{
+.TamanhoConquistas {
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -316,12 +412,12 @@ body {
 
 .imagemFundoConquistas {
     background-image: url(../assets/imagens/fundoConquistas.jpg);
- 
+
     background-repeat: repeat;
 }
 
-.retanguloCnquistas{
-    background-color: rgb(0, 0, 0,0.5); 
+.retanguloCnquistas {
+    background-color: rgb(0, 0, 0, 0.5);
     border-radius: 2rem;
     display: flex;
     flex-direction: row;
@@ -331,36 +427,42 @@ body {
     align-self: center;
     height: 100%;
     margin: 10%;
-        color: white;
+    color: white;
 }
-.conquista{
+
+.conquista {
     display: flex;
 }
-.conquista img{
+
+.conquista img {
     width: 20vw;
     height: 20vh;
     align-self: center;
     margin: 1.2rem;
     margin-top: 1.4rem;
 }
+
 .conquista input {
     width: 5vw;
 }
-.conquista h5{
+
+.conquista h5 {
     font-family: "Share Tech", sans-serif;
     color: rgb(120, 120, 120);
     margin: 0;
 }
-.conquista h4{
+
+.conquista h4 {
     font-family: "Share Tech", sans-serif;
     margin-bottom: 0.5rem;
 }
-.conquista h2{
+
+.conquista h2 {
     margin-bottom: 0.8rem;
 }
-.tituloConquista{
+
+.tituloConquista {
     align-self: center;
     justify-self: center;
     margin: 4rem;
 }
-
