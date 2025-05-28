@@ -3,7 +3,7 @@ var usuarioModel = require("../models/usuarioModel");
 function cadastrar2(req, res) {
     var nome = req.body.nomeServer;
     var username = req.body.usernameServer;
-    var email = req.body.emailServer;
+    var email = req.body.email;
     var senha = req.body.senhaServer
 
     if (!nome) {
@@ -45,7 +45,7 @@ function buscarIdUsuario(req, res) {
 
 function cadastrar(req, res) {
 
-    var idUsuario = req.body.idUsuario;
+    var idUsuario = req.params.idUsuario;
 
     if (!idUsuario) {
         res.status(400).send("Campos obrigatórios não foram preenchidos!");

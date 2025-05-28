@@ -3,8 +3,8 @@ use hallownet;
 
 
 create table usuario(
-id int primary key auto_increment,
-nomeCompleto varchar(60),
+idUsuario int primary key auto_increment,
+nome varchar(60),
 username varchar(15) unique key,
 email varchar(40) unique key,
 senha varchar(80)
@@ -22,7 +22,7 @@ fkconquista int,
 dataHorario datetime,
 status boolean default false,
 primary key (fkusuario,fkconquista),
-foreign key (fkusuario) references usuario(id),
+foreign key (fkusuario) references usuario(idUsuario),
 foreign key (fkconquista) references conquistas(id)
 );
 

@@ -13,7 +13,7 @@ router.get("/buscar-id-usuario/:email", function (req, res) {
 });
 
 
-router.post("/cadastrar", function (req, res) {
+router.post("/cadastrar/:idUsuario", function (req, res) {
     usuarioController.cadastrar(req, res);
 })
 

@@ -19,7 +19,7 @@ function cadastrar() {
         body: JSON.stringify({
             nomeServer: nomeVar,
             usernameServer: usernameVar,
-            emailServer: email,
+            email: email,
             senhaServer: senhaVar,
         }),
     })
@@ -28,17 +28,21 @@ function cadastrar() {
                 throw new Error("Erro ao cadastrar usuário");
             }
 
-
+           
             return fetch(`/usuarios/buscar-id-usuario/${email}`);
+            
+           
         })
         .then((resposta2) => {
             if (!resposta2.ok) {
                 throw new Error("Erro ao buscar ID do usuario");
             }
+            
             return resposta2.json();
         })
         .then((dados) => {
-            const idUsuario = dados.idUsuario;
+            let idUsuario = dados.idUsuario;
+
 
             return fetch("/usuarios/cadastrar", {
                 method: "POST",
