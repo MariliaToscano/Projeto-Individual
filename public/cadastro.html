@@ -9,9 +9,9 @@
 </head>
 
 <body>
-    <div class="paginaTamanho">
+    <div class="paginaTamanhoCadastro">
 
-        <div class="topoPaginaLogin">
+        <div class="topoPaginaCadastro">
              <div class="headerTamanho">
             <div class="header">
                 <a href="index.html">Página Inicial</a>
@@ -33,11 +33,12 @@
         </div>
 
 
-            <div class="retangulo">
+            <div class="retanguloCadastro">
 
                 <h2>Faça seu cadastro</h2>
                 <form>
-                    <p>Nome Completo:</p>
+                    <div class="textoFormularioCadastro">
+                        <p>Nome Completo:</p>
                     <input type="text" id="ipt_nomeCompleto" required>
                     <p>Username:</p>
                     <input type="text" id="ipt_Username" required>
@@ -47,8 +48,10 @@
                     <input type="password" id="ipt_senhaCadastro" required>
                     <p>Confirmar Senha:</p>
                     <input type="password" id="ipt_confirmarSenha" required>
+                    </div>
+                    
                     <p><i><a href="login.html">Já fez seu cadastro? Faça seu login</a></i></p>
-                    <button type="button" onclick="cadastrar1()"></button>
+                    <button type="button" class="button" onclick="cadastrar1()"><img src="./assets/imagens/main_menu_pointer_anim0009.png"></button>
                 </form>
 
 
