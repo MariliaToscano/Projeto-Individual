@@ -12,7 +12,7 @@
 <body>
     <div class="paginaTamanho">
 
-        <div class="topoPagina">
+        <div class="topoPaginaLogin">
             <div class="headerTamanho">
                 <div class="header">
                     <a href="index.html">Página Inicial</a>
@@ -39,12 +39,19 @@
 
                 <h2>Faça seu Login</h2>
                 <form>
-                    <p>Email:</p>
-                    <input type="text" id="ipt_emailLogin" required>
-                    <p>Senha:</p>
-                    <input type="password" id="ipt_senhaLogin" required>
+                    <div class="textoFormulario">
+                          <div class="formulario">
+                        <p>Email:</p> <input type="text" id="ipt_emailLogin" required>
+                    </div>
+                    <div class="formulario">
+                        <p>Senha:</p> <input type="password" id="ipt_senhaLogin" required>
+                    </div>
+                    
+                    
                     <p><i><a href="cadastro.html">Ainda não é cadastrado? Faça seu cadastro</a></i></p>
-                    <button type="button" onclick="login()">Fazer Login</button>
+                    </div>
+                  
+                    <button class="button" type="button" onclick="login()"><img src="./assets/imagens/main_menu_pointer_anim0009.png"></button>
                 </form>
 
 
@@ -97,7 +104,7 @@
 
 
 
-                    window.location.href = "./posLogin.html";
+                    window.location.href = "./conquistasPosLogin.html";
 
 
                 });

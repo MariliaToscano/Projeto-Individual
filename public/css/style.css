@@ -39,16 +39,11 @@ body {
     width: 20%;
     justify-self: center;
     margin: 7%;
+  
 }
 
 .lado {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-self: flex-start;
-    padding: 0.5rem;
-    margin: 1.5rem;
-    font-size: 0.9rem;
+    font-size: smaller;
 }
 
 
@@ -305,13 +300,13 @@ body {
 
 /* LOGIN */
 .paginaTamanho {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 120vh;
     display: flex;
 }
 
 .topoPaginaLogin {
-    background-image: url(../assets/login/fundoLogin.jpg);
+    background-image: url('../assets/login/fundoLogin.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -322,6 +317,7 @@ body {
 }
 
 .retangulo {
+    margin-top: 2rem;
     color: white;
     background-color: rgb(0, 0, 0, 0.5);
     border-radius: 2rem;
@@ -330,10 +326,53 @@ body {
     width: 50%;
     justify-self: center;
     align-self: center;
-    height: 50%;
-    margin: 10%;
+    height: 60%;
+    align-items: center;
+    margin-left: 5rem;
 }
 
+.retangulo h2{
+    font-family: "Share Tech", sans-serif;
+}
+.retangulo form a{
+    text-decoration: none;
+    color: #565EFA;
+}
+
+.retangulo p{
+    font-family: "Share Tech", sans-serif;
+    margin-right: 6dvh;
+}
+.retangulo form{
+    margin-top: 2rem;
+}
+.formulario{
+    display: flex;
+    flex-direction: row;
+}
+.formulario input{
+    width: 20rem;
+    height: 1rem;
+    align-self: center;
+    border-radius: 10px;
+    border-style: none;
+}
+
+.retangulo  .button{
+    display: flex;
+    justify-self: center;
+    border-radius: 10px;
+    background-color: transparent;
+    border-style: none;
+    color: black;
+    font-size: medium;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-left: 1rem;
+}
+.retangulo  .button img{
+    width: 60%;
+}
 
 /* Curiosidades */
 
@@ -358,6 +397,7 @@ body {
     align-self: center;
     justify-self: center;
     margin-top: 8vw;
+
 }
 
 .curiosidadeTexto {
@@ -375,7 +415,9 @@ body {
 .topico {
     margin: 5%;
 }
-
+.curiosidadesConteudo h3{
+    font-weight: 100;
+}
 .footerTamanho{
     height: 10vh;
     width: 100%;
