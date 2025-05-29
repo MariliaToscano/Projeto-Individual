@@ -14,7 +14,7 @@ function contarStatus( fkusuario){
 }
 function ultimaConquistaBuscar(fkusuario){
     var instrucaoSql = `
-        SELECT fkconquista, nome, imagem, DATE_FORMAT(dataHorario, '%d/%m/%Y %H:%i')
+        SELECT fkconquista, nome, imagem, DATE_FORMAT(dataHorario, '%d/%m/%Y %H:%i') as dataHorario
         FROM usuario_conquistas 
         INNER JOIN conquistas ON conquistas.id = usuario_conquistas.fkconquista
         WHERE fkusuario = '${fkusuario}' AND dataHorario = (
@@ -24,9 +24,16 @@ function ultimaConquistaBuscar(fkusuario){
     `
     return database.executar(instrucaoSql);
 }
+function buscarUsername(fkusuario){
+    var instrucaoSql = `
+       SELECT username FROM usuario WHERE idUsuario = '${fkusuario}'
+    `
+    return database.executar(instrucaoSql);
+}
 
 
 module.exports = {
   contarStatus,
-  ultimaConquistaBuscar
+  ultimaConquistaBuscar,
+  buscarUsername
 };

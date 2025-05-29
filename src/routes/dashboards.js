@@ -12,4 +12,7 @@ router.get("/ultimaConquistaBuscar/:fkusuario", function (req, res){
     dashboardController.ultimaConquistaBuscar(req, res);  
 });
 
+router.get("/buscarUsername/:fkusuario", function (req, res){
+    dashboardController.buscarUsername(req, res);  
+});
 module.exports = router;

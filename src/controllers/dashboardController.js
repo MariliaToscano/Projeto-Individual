@@ -25,8 +25,22 @@ function ultimaConquistaBuscar(req, res){
             res.status(500).send("Erro ao buscar ultima conquista.");
     })
 }
+function buscarUsername(req, res){
+    const fkusuario = req.params.fkusuario
+
+    dashboardModel.buscarUsername(fkusuario)
+    .then(resultado => {
+        res.json(resultado);
+    })
+    .catch(erro => {
+         console.error("Erro ao buscar username:", erro);
+            res.status(500).send("Erro ao buscar username.");
+    })
+}
+
 
 module.exports = {
     contarStatus,
-    ultimaConquistaBuscar
+    ultimaConquistaBuscar,
+    buscarUsername
 };

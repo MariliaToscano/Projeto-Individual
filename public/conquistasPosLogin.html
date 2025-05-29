@@ -38,6 +38,10 @@
         <div class="graficoRosquinha">
           <canvas id="myChart"></canvas>
         </div>
+        <div class="imagemUser">
+          <img src="./assets/pagInicial/quirrelPagInicial.png">
+        </div>
+        <div id="div_username" class="username" style="color: white;"></div>
         <div class="kpiConquistaAlcancada" style="color: white;">
           <h4>Conquistas Alcançadas:</h4>
           <div id="div_kpiConquistaAlcancada"></div>
@@ -764,15 +768,39 @@
         fetch(`/dashboards/ultimaConquistaBuscar/${fkusuario}`)
           .then(res => res.json())
           .then(dados2 => {
-            ultimaConquista(dados2[0])
+            
+
+              ultimaConquista(dados2[0])
+           
+          })
+      })
+
+      .then((resposta3) => {
+        fetch(`/dashboards/buscarUsername/${fkusuario}`)
+          .then(res => res.json())
+          .then (dados3 => {
+
+            username(dados3[0].username)
+
           })
       })
       .catch(err => console.error("Erro ao obter dados do gráfico:", err));
 
   }
 
+  function username(dados3){
+    div_username.innerHTML = dados3
+  }
+
   function ultimaConquista(dados2) {
-    div_kpiUltimaConquista.innerHTML = dados2.imagem + dados2.nome + dados2.dataHorario
+    if(dados2 == undefined){
+      div_kpiUltimaConquista.innerHTML = ''
+    }else{
+      div_kpiUltimaConquista.innerHTML = dados2.imagem + dados2.nome + dados2.dataHorario
+      
+    }
+  
+    
 
   }
 
