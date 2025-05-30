@@ -583,12 +583,17 @@ body {
     height: 50%;
     display: flex;
     color: white;
+    flex-direction: column;
 }
 
+.imagemFundoConquistasTopo{
+    background-image: url('../assets/fundoConquistas\ .jpg');
+    background-size: cover;
+}
 
 .dashboard1{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
 }
 
@@ -620,7 +625,7 @@ body {
 }
 
 .kpiConquistaFalta{
-        background-color: #1c1c1d;
+    background-color: #1c1c1d;
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
@@ -632,11 +637,64 @@ body {
     height: 5rem;
 }
 
-.graficoRosquinha{
-    width: 30%;
 
-}
 .User{
-    margin-left: 18%;
+   margin-left: 20%;
+    display: flex;
+    flex-direction: row;
+}
+.graficos{
+    background-color: #1c1c1d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 35%;
+    width: 40%;
+    border-radius: 2rem;
+}
+.graficos h4 span{
+    text-decoration: underline;
 }
 
+.graficos h4 a{
+    text-decoration: none;
+    color: gray;
+}
+
+.Usuario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 16%;
+}
+
+.username{
+    font-family: "Share Tech", sans-serif;
+    font-size:2rem;
+}
+
+.imagemUser img{
+    width: 120%;
+}
+
+.tituloH3{
+    margin-left: 4%;
+}
+
+.graficosFreq{
+    background-color: #1c1c1d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 35%;
+    width: 40%;
+    border-radius: 2rem;
+}
+.graficosFreq h4 span{
+    text-decoration: underline;
+}
+
+.graficosFreq h4 a{
+    text-decoration: none;
+    color: gray;
+}
