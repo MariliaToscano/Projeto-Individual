@@ -7,6 +7,7 @@
   <title>HallowNet - Conquistas</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link rel="stylesheet" href="./css/style.css">
+  
 
 </head>
 
@@ -34,9 +35,9 @@
 
       </div>
       <div class="tituloH3">
-         <h3>Conquistas (Pc/Xbox One/ Nintendo Switch)</h3>
+        <h3>Conquistas (Pc/Xbox One/ Nintendo Switch)</h3>
       </div>
-     
+
       <div class="dashboard1">
         <div class="User">
           <div class="Usuario">
@@ -52,18 +53,22 @@
               <canvas id="myChart"></canvas>
             </div>
           </div>
-         
+
         </div>
         <div class="KPIS">
-          <div class="ultimaConquista" h4>Última Conquista:</h4>
-            <div id="div_kpiUltimaConquista"></div>
+          <div class="ultimaConquista">
+            <h4>Última Conquista:</h4>
+            <div class="kpiUltimaKpi" id="div_kpiUltimaConquista"></div>
           </div>
-          <div class="kpiConquistaAlcancada" h4>Conquistas Alcançadas:</h4>
-            <div id="div_kpiConquistaAlcancada"></div>
+          <div class="KPIDiferente">
+            <div class="kpiConquistaAlcancada" h4>Conquistas Alcançadas:</h4>
+              <div id="div_kpiConquistaAlcancada"></div>
+            </div>
+            <div class="kpiConquistaFalta" h4>Conquistas Restantes:</h4>
+              <div id="div_kpiConquistaFalta"></div>
+            </div>
           </div>
-          <div class="kpiConquistaFalta" h4>Conquistas Restantes:</h4>
-            <div id="div_kpiConquistaFalta"></div>
-          </div>
+
         </div>
 
 
@@ -1024,7 +1029,14 @@
     if (dados2 == undefined) {
       div_kpiUltimaConquista.innerHTML = ''
     } else {
-      div_kpiUltimaConquista.innerHTML = dados2.imagem + dados2.nome + dados2.dataHorario
+      console.log(dados2)
+      div_kpiUltimaConquista.innerHTML = `  <div class="imagem">${dados2.imagem}</div> 
+      <div class="textoKPI">
+        <span class="nome">${dados2.nome}</span> 
+        <span class="descricao">${dados2.descricao}</span> 
+        <span class="dataHorario">${dados2.dataHorario}</span>
+        </div>
+      ` 
 
     }
 
@@ -1056,7 +1068,7 @@
         backgroundColor: [
           'rgb(157, 178, 191)',
           'rgb(39, 55, 77)'
-          
+
         ],
         hoverOffset: 4
       }]

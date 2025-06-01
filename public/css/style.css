@@ -368,6 +368,7 @@ body {
     font-weight: 600;
     margin-top: 2rem;
     margin-left: 1rem;
+    cursor: pointer;
 }
 .retangulo  .button img{
     width: 60%;
@@ -432,6 +433,7 @@ body {
     font-weight: 600;
     margin-top: 2rem;
     margin-left: 1rem;
+    cursor: pointer;
 }
 .retanguloCadastro  .button img{
     width: 60%;
@@ -555,6 +557,11 @@ body {
     height: 30px;
 }
 
+.KPIDiferente{
+    display: flex;
+    flex-direction: row;
+    margin-left: 10%;
+}
 .conquista img {
     width: 100px;         
     height: 100px;        
@@ -600,6 +607,7 @@ body {
 .KPIS{
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 
 .ultimaConquista{
@@ -609,7 +617,8 @@ body {
     flex-direction: column;
     padding: 0.5rem;
     margin-top: 5%;
-    margin-left: 5%;
+    margin-left: 14%;
+    margin-bottom: 2%;
 }
 .kpiConquistaAlcancada{
     background-color: #1c1c1d;
@@ -637,6 +646,28 @@ body {
     height: 5rem;
 }
 
+
+.kpiUltimaKpi{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.textoKPI{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    
+}
+
+.textoKPI .dataHorario{
+    font-family: "Share Tech", sans-serif;
+    color: gray;
+}
+
+.textoKPI .descricao{
+    font-family: "Share Tech", sans-serif;
+}
 
 .User{
    margin-left: 20%;
