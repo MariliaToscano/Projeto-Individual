@@ -468,18 +468,27 @@ body {
 .imagemFundoCuriosidades {
     background-image: url(../assets/imagens/fundos.png);
     background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.topico b{
+    font-weight: 700;
+    font-size: larger;
 }
 
 .curiosidadesConteudo {
     color: white;
     font-family: "Share Tech", sans-serif;
-    background: rgb(0, 0, 0, 0.5);
+    background: rgb(0, 0, 0, 0.8);
     border-radius: 5%;
     width: 80%;
     align-self: center;
     justify-self: center;
     margin-top: 8vw;
-
+    margin-bottom: 8%;
 }
 
 .curiosidadeTexto {
@@ -539,7 +548,10 @@ body {
 .imagemFundoConquistas {
     background-image: url(../assets/imagens/fundoConquistas.jpg);
     background-attachment: fixed;
-
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .retanguloConquistas {
@@ -551,6 +563,7 @@ body {
     margin-top: 5%;
     margin-left: 5%;
     display: flex;
+    margin-bottom:  10%;
 }
 
 
