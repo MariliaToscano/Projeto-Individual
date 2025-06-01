@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <title>HallowNet - Visão Geral</title>
+
+</head>
+
+<body onload="obterDados()">
+  <div class="tamanhoDadosGerais">
+    <div class="imagemFundoDadosGerais">
+      <div class="headerTamanho">
+        <div class="header">
+          <a href="posLogin.html">Página Inicial</a>
+          <a href="login.html">Saiba Mais</a>
+          <a href="CuriosidadesPosLogin.html">Curiosidades</a>
+
+
+          <img class="logo" src="./assets/imagens/logo.png">
+
+
+          <a href="conquistasPosLogin.html">Conquistas</a>
+
+          <a href="dadosGerais.html"><b>· Visão Geral</b></a>
+
+          <a href="index.html" onclick="limparSessao()">Sair</a>
+
+
+        </div>
+
+      </div>
+
+      <div class="tituloH4DadosGerais">
+         <h4><span><b>· Sua Visão Geral</b></span> | <a href="#">Visão Geral Todos os Usuários</a></h4>
+      </div>
+
+     
+      <div class="dashboard2">
+            <div class="graficoLinha">
+              <canvas id="myChart"></canvas>
+            </div>
+          <div class="mediaConquistaTempo"> 
+            <h4>Conquista por semana:</h4>
+            <div id="div_kpiMediaConquistaTempo"></div>
+        </div>
+    </div>
+
+
+
+    <div class="footerTamanho">
+      <div class="footer">
+        <img class="emailFooter" src="./assets/imagens/images-removebg-preview.png" alt="">
+        <p>Contate-me: marilia.araujo@sptech.school</p>
+      </div>
+    </div>
+
+
+    <script src="js/conquista.js"></script>
+</body>
+</body>
+<script>
+    function obterDados() {
+        const fkusuario = sessionStorage.ID
+
+
+        fetch(`/dashboards/graficoLinhaJogador/${fkusuario}`)
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                plotarGrafico(data);
+
+            })
+        .then(resposta2 => {
+            fetch(`/dashboards/kpiMedia/${fkusuario}`)
+            .then(res => res.json())
+            .then(data2 => {
+                mediaConquista(data2)
+            })
+        })
+            .catch(function (err) {
+                console.log(err);
+            })
+
+    }
+    function plotarGrafico(data) {
+
+        var semanaGrafico = []
+        var numeroConquista = []
+
+        var soma = 0
+        for(var i = 0; i < data.length; i++){
+            var dataMontada = ''
+
+            for(var j = 0; j < 10;j++){
+                dataMontada += data[i].dia[j]
+            }
+          
+            semanaGrafico.push(dataMontada)
+            soma += Number(data[i].contagem)
+            numeroConquista.push(soma)
+            
+         
+            
+        }
+        console.log('DATA',data, ' semanaGrafico', semanaGrafico, ' numeroConquista', numeroConquista)
+
+        const ctx = document.getElementById('myChart');
+
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: semanaGrafico,
+                datasets: [{
+                    label: 'Conquistas',
+                    data: numeroConquista,
+                    borderColor: 'rgb(255, 1, 52)',
+                    backgroundColor: 'rgb(255, 1, 52)',
+                    borderWidth: 1
+                }]
+            },
+        });
+
+
+    }
+
+</script>
+
+</html>

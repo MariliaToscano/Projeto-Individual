@@ -681,20 +681,15 @@ body {
     margin-left: 4%;
 }
 
-.graficosFreq{
-    background-color: #1c1c1d;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 35%;
-    width: 40%;
-    border-radius: 2rem;
-}
-.graficosFreq h4 span{
-    text-decoration: underline;
+
+
+.tamanhoDadosGerais {
+    width: 100%;
+    height: 100%;
+  
 }
 
-.graficosFreq h4 a{
-    text-decoration: none;
-    color: gray;
+.imagemFundoDadosGerais {
+    background-image: url(../assets/imagens/undefined\ -\ Imgur\ \(1\).jpg);
+    background-attachment: fixed;
 }

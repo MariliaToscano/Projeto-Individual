@@ -38,9 +38,36 @@ function buscarUsername(req, res){
     })
 }
 
+function graficoLinhaJogador(req, res){
+        const fkusuario = req.params.fkusuario
+
+    dashboardModel.graficoLinhaJogador(fkusuario)
+    .then(resultado => {
+        res.json(resultado);
+    })
+    .catch(erro => {
+         console.error("Erro ao buscar dados do grafico:", erro);
+            res.status(500).send("Erro ao buscar dados do grafico.");
+    })
+}
+
+function kpiMedia(req, res){
+        const fkusuario = req.params.fkusuario
+
+    dashboardModel.kpiMedia(fkusuario)
+    .then(resultado => {
+        res.json(resultado);
+    })
+    .catch(erro => {
+         console.error("Erro ao buscar username:", erro);
+            res.status(500).send("Erro ao buscar username.");
+    })
+}
 
 module.exports = {
     contarStatus,
     ultimaConquistaBuscar,
-    buscarUsername
+    buscarUsername,
+    graficoLinhaJogador,
+    kpiMedia
 };

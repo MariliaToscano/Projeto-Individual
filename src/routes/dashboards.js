@@ -15,4 +15,13 @@ router.get("/ultimaConquistaBuscar/:fkusuario", function (req, res){
 router.get("/buscarUsername/:fkusuario", function (req, res){
     dashboardController.buscarUsername(req, res);  
 });
+
+router.get("/graficoLinhaJogador/:fkusuario", function (req, res){
+    dashboardController.graficoLinhaJogador(req, res);  
+});
+
+router.get("/kpiMedia/:fkusuario", function (req, res){
+    dashboardController.kpiMedia(req, res);  
+});
+
 module.exports = router;
