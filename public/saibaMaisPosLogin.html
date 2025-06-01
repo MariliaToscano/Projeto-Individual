@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hallownet - Saiba Mais</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="tamanhoSaibaMais">
+        <div class="imagemFundoSaibaMais">
+
+             <div class="headerTamanho">
+            <div class="header">
+                <a href="posLogin.html"><b>· Página Inicial</b></a>
+                <a href="saibaMaisPosLogin.html">Saiba Mais</a>
+                <a href="CuriosidadesPosLogin.html">Curiosidades</a>
+
+
+                <img class="logo" src="./assets/imagens/logo.png">
+
+
+                <a href="conquistasPosLogin.html">Conquistas</a>
+
+                <a href="dadosGerais.html">Visão Geral</a>
+
+                <a href="index.html" onclick="limparSessao()">Sair</a>
+                
+
+            </div>
+
+        </div>
+            <div class="retanguloSaibaMais">
+                <h1>Personagens</h1>
+                <div class="sliderContainer">
+
+                    <button id="botaoAnterior">
+                        <img src="./assets/saibaMais/SpriteAtlasTexture-UI (Group 1)-128x64-fmt4.png"></button>
+                    <div class="container-images">
+
+                        <div class="slider on">
+                            <div class="imagemTitulo">
+                                <img src="./assets/saibaMais/Elderbug.png">
+                                <h4>Elderbug</h4>
+                            </div>
+
+                            <p> É o primeiro personagem não infectado que o Knight encontra em suas andanças.
+                                Ele é um morador da cidade inicial (Dirthmounth), a única área de Hallownest
+                                que fica na superfície. Ele é responsável por contar por cima sobre as ruínas
+                                do reino, menciona a infecção e os sonhos. Também alerta o jogador sobre os
+                                perigos de explorar as profundezas do local, pois muitos foram e poucos
+                                voltaram.</p>
+                        </div>
+                        <div class="slider">
+                            <div class="imagemTitulo">
+                                <img src="./assets/saibaMais/Cornifer.png">
+                                <h4>Cornifer</h4>
+                            </div>
+                            <p>Cornifer chegou em Hallownest após a sua ruína, um cartógrafo entusiasta que
+                                explora as entranhas do reino mapeando os locais que passa. Ele é o responsável
+                                por vender os mapas das áreas do jogo, sendo necessário comprar um mapa a cada
+                                área nova, o que também torna necessário encontrar o personagem a cada área
+                                para conseguir adquirir o mapa.</p>
+                        </div>
+                        <div class="slider">
+                            <div class="imagemTitulo">
+                                <img src="./assets/saibaMais/Sly.png">
+                                <h4>Sly</h4>
+                            </div>
+                            <p>Um inseto que pode ser encontrado ao explorar Hallownest. Ele é um mercante
+                                da primeira vila do jogo e vende vários itens interessantes e importantes.
+                                Um dia, em um começo da infecção, Sly desce as profundezas do reino em um
+                                estado similar a sonambulismo. Quando o jogador o encontra, está quase
+                                sucumbindo para a infecção, mas Knight é capaz de quebrar seu transe.</p>
+                        </div>
+                        <div class="slider">
+                            <div class="imagemTitulo">
+                                <img src="./assets/saibaMais/q.png">
+                                <h4>Quirrel</h4>
+                            </div>
+                            <p>Quirrel é um explorador, um dos muitos que resolvem se aventurar nas entranhas
+                                de Hallownest, mas diferentes dos demais há algo no reino que lhe é familiar.
+                                O personagem é o que mais se assemelha com Knight, por mais de desconhecer,
+                                possui um propósito maior naquele lugar e encontrar com Quirrel no meio da
+                                aventura é encontrar um igual entre tantos diferentes.</p>
+                        </div>
+                        <div class="slider">
+                            <div class="imagemTitulo">
+                                <img src="./assets/saibaMais/Grub.png">
+                                <h4>Grubs</h4>
+                            </div>
+                            <p>Grubs estão presas por todo mapa em locais escondidos, e após serem libertadas
+                                voltam para o Grubfather que oferece uma recompensa para cada Grub resgatada.
+                                São 46 no total, sendo necessário enfrentar inimigos, acessar locais de
+                                difícil acesso ou descobrir locais escondidos no mapa para libertá-las.</p>
+                        </div>
+                    </div>
+                    <button id="botaoProximo">
+                        <img src="./assets/saibaMais/SpriteAtlasTexture-UI (Group 1)-128x64-fmt4.png"></button>
+
+                </div>
+
+
+                <h1>Funcionalidades</h1>
+                <div class="funcionalidades">
+
+                    <div class="funcionalidadesConteudo">
+                        <button class="btnOpenModal" onclick="openModal('modalBanco')"><img
+                                src="./assets/saibaMais/town_bench.png"></button>
+                        <h4>Bancos</h4>
+                    </div>
+
+                    <div class="modal-container" id="modalBanco">
+                        <div class="modal">
+
+                            <div class="tituloInfo">
+                                <div class="btns">
+                                    <button class="btnOK" onclick="closeModal('modalBanco')">X</button>
+                                </div>
+                                <h2>Bancos</h2>
+                            </div>
+                            <div class="conteudoModal">
+                                <span>
+                                    Os bancos são a forma de salvar o jogo. Toda vez que o jogador sai e entra do jogo
+                                    ele
+                                    reaparece
+                                    no último banco que se sentou. Os bancos são o momento de descanso e ócio, que
+                                    recarrega
+                                    a vida e a alma do Knight. Neles também é possível equipar e desequipar amuletos.
+                                </span>
+                                <img src="./assets/saibaMais/town_bench.png">
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+                    <div class="funcionalidadesConteudo">
+                        <button class="btnOpenModal" onclick="openModal('modalFerrao')"><img
+                                src="./assets/saibaMais/Nail.png" style="width: 13rem;"></button>
+                        <h4>Ferrão e suas evoluções</h4>
+                    </div>
+
+                    <div class="modal-container" id="modalFerrao">
+                        <div class="modal">
+
+                            <div class="tituloInfo">
+                                <div class="btns">
+                                    <button class="btnOK" onclick="closeModal('modalFerrao')">X</button>
+                                </div>
+                                <h2>Ferrão e suas evoluções</h2>
+                            </div>
+
+                            <div class="conteudoModal">
+                                <span>
+                                    O Ferrão é a arma que o Knight utiliza para realizar ataques e enfrentar inimigos.
+                                    É possível melhorar o Ferrão para que ele dê mais dano através do ferreiro que pode
+                                    ser
+                                    encontrado durante a exploração do reino de Hallownest.
+                                </span>
+                                <img src="./assets/saibaMais/Nail.png">
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="funcionalidadesConteudo">
+                        <button class="btnOpenModal" onclick="openModal('modalAlma')"><img
+                                src="./assets/saibaMais/Soul_Meter.png" "></button>
+                    <h4>Alma</h4>
+                    </div>
+                    
+                    <div class=" modal-container" id="modalAlma">
+                            <div class="modal">
+
+                                <div class="tituloInfo">
+                                    <div class="btns">
+                                        <button class="btnOK" onclick="closeModal('modalAlma')">X</button>
+                                    </div>
+                                    <h2>Alma</h2>
+                                </div>
+
+                                <div class="conteudoModal">
+                                    <span>
+                                        A alma é uma força arcana que dá vida aos insetos,
+                                        ela pode ser gasta e adquirida. Através dela também é possível
+                                        utilizar feitiços e se curar de ataques inimigos, conhecimento trazido pelos
+                                        xamãs caramujos. Há várias formas de adquirir alma, uma delas é atacando
+                                        inimigos,
+                                        outra forma seria pelos totens de alma que forma construídos por uma civilização
+                                        antiga
+                                        anterior a de Hallownest.
+                                    </span>
+                                    <img src="./assets/saibaMais/Soul_Meter.png">
+
+                                </div>
+
+                            </div>
+                    </div>
+
+
+                    <div class="funcionalidadesConteudo">
+                        <button class="btnOpenModal" onclick="openModal('modalReceptaculo')"><img
+                                src="./assets/saibaMais/Soul_Vessel.png" style="width: 9rem;"></button>
+                        <h4>Fragmento de Receptáculo</h4>
+                    </div>
+
+                    <div class="modal-container" id="modalReceptaculo">
+                        <div class="modal">
+                            <div class="tituloInfo">
+                                <div class="btns">
+                                    <button class="btnOK" onclick="closeModal('modalReceptaculo')">X</button>
+                                </div>
+                                <h2>Fragmento de Receptáculo</h2>
+                            </div>
+
+                            <div class="conteudoModal">
+                                <span>
+                                    Ao coletar três Fragmentos de Receptáculo é adquirido um Receptáculo de Alma
+                                    que aumenta o máximo de alma que o Knight pode coletar de uma vez. Espalhados pelo
+                                    reino
+                                    há 9 fragmentos, sendo então possível aumentar o máximo de alma em 3 vezes.
+                                </span>
+                                <img src="./assets/saibaMais/Soul_Vessel.png" style="width: 8rem;">
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="funcionalidadesConteudo">
+                        <button class="btnOpenModal" onclick="openModal('modalMascara')"><img
+                                src="./assets/saibaMais/mask.png" style="width: 6rem;"></button>
+                        <h4>Máscaras</h4>
+                    </div>
+
+                    <div class="modal-container" id="modalMascara">
+                        <div class="modal">
+                            <div class="tituloInfo">
+                                <div class="btns">
+                                    <button class="btnOK" onclick="closeModal('modalMascara')">X</button>
+                                </div>
+                                <h2>Máscaras</h2>
+                            </div>
+
+                            <div class="conteudoModal">
+                                <span>
+                                    A vida do Knight é representada por máscaras. A cada dano recebido uma ou duas das
+                                    máscaras
+                                    é gasta, a depender da forma que levou dano ou do inimigo. O jogador começa com 5
+                                    máscaras e
+                                    pode conseguir até 9. É possível recuperar a vida através da habilidade de focar
+                                    utilizando
+                                    alma ou se sentando em um banco.
+                                </span>
+                                <img src="./assets/saibaMais/mask.png" style="width: 8rem;">
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="funcionalidadesConteudo">
+                        <button class="btnOpenModal" onclick="openModal('modalFragmento')"><img
+                                src="./assets/saibaMais/Mask_Shard.png" style="width: 6rem;"></button>
+                        <h4>Fragmentos de Máscaras</h4>
+                    </div>
+
+                    <div class="modal-container" id="modalFragmento">
+                        <div class="modal">
+                            <div class="tituloInfo">
+                                <div class="btns">
+                                    <button class="btnOK" onclick="closeModal('modalFragmento')">X</button>
+                                </div>
+                                <h2>Fragmentos de Máscaras</h2>
+                            </div>
+
+                            <div class="conteudoModal">
+                                <span>
+                                    Fragmentos de Máscaras estão espalhados pelas entranhas de Hallownest, ao coletar
+                                    4 desses fragmentos é adquirido uma Máscara Antiga que aumenta a vida do Knight em
+                                    um.
+                                    Há 16 Fragmentos de Máscaras sendo possível aumentar a vida em 4.
+                                </span>
+                                <img src="./assets/saibaMais/Mask_Shard.png">
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="funcionalidadesConteudo">
+                        <button class="btnOpenModal" onclick="openModal('modalLifeblood')"><img
+                                src="./assets/saibaMais/maskLifeblood.png" style="width: 6rem;"></button>
+                        <h4>Lifeblood</h4>
+                    </div>
+
+                    <div class="modal-container" id="modalLifeblood">
+                        <div class="modal">
+                            <div class="tituloInfo">
+                                <div class="btns">
+                                    <button class="btnOK" onclick="closeModal('modalLifeblood')">X</button>
+                                </div>
+                                <h2>Lifeblood</h2>
+                            </div>
+
+                            <div class="conteudoModal">
+                                <span>
+                                    Pelo mapa do jogo é possível encontrar essas estruturas azuis, ao quebrá-las o
+                                    jogador
+                                    adquire máscara azuis que ficam ao lado das suas máscaras normais. As máscaras azuis
+                                    seriam uma
+                                    forma de vida temporária, ou seja, o jogador adquire vida a mais, mas quando toma
+                                    dano e
+                                    as
+                                    máscaras são gastas elas não podem mais ser recuperadas.
+                                </span>
+                                <img src="./assets/saibaMais/maskLifeblood.png" style="width: 8rem;">
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="funcionalidadesConteudo">
+                        <button class="btnOpenModal" onclick="openModal('modalAtaques')"><img
+                                src="./assets/saibaMais/_0001_charge_cyclone.png" style="width: 16rem;"></button>
+                        <h4>Ataques, Feitiços e Itens</h4>
+                    </div>
+
+                    <div class="modal-container" id="modalAtaques">
+                        <div class="modal">
+                            <div class="tituloInfo">
+                                <div class="btns">
+                                    <button class="btnOK" onclick="closeModal('modalAtaques')">X</button>
+                                </div>
+                                <h2>Ataques, Feitiços e Itens</h2>
+                            </div>
+                            <div class="conteudoModal">
+                                <span>
+                                    O jogador possui formas de conseguir novas habilidades. Existem os treinamentos que
+                                    o
+                                    ensina ataques diferentes com o ferrão (a espada). Os feitiços são outras formas de
+                                    ataque
+                                    que utilizam alma para serem usados. Por último, os itens, dão habilidades
+                                    geralmente
+                                    relacionadas a mobilidade, permitindo que o jogador se movimente mais livremente,
+                                    como o
+                                    pulo duplo. Também há itens que são necessários para acessar certos locais.
+                                </span>
+                                <img src="./assets/saibaMais/_0001_charge_cyclone.png" style="width: 15rem;">
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="funcionalidadesConteudo">
+                        <button class="btnOpenModal" onclick="openModal('modalGeos')"><img
+                                src="./assets/saibaMais/smallGeos.png"></button>
+                        <h4>Geos</h4>
+                    </div>
+
+                    <div class="modal-container" id="modalGeos">
+                        <div class="modal">
+                            <div class="tituloInfo">
+                                <div class="btns">
+                                    <button class="btnOK" onclick="closeModal('modalGeos')">X</button>
+                                </div>
+                                <h2>Geos</h2>
+                            </div>
+
+                            <div class="conteudoModal">
+                                <span>
+                                    São a base da economia de Hallownest, é por meio deles que é possível comprar itens
+                                    dos lojistas. Geos podem ser conseguidos de diversas formas, como matando mobs, em
+                                    baús,
+                                    em pedras de geo entre outros.
+                                </span>
+                                <div class="imagensAmuletos">
+                                    <div class="geosPouco">
+                                        <img src="./assets/saibaMais/smallGeos.png" style="width: 5rem;">
+                                        <img src="./assets/saibaMais/chest.png" style="width: 5rem;">
+                                    </div>
+                                    <img src="./assets/saibaMais/geo.png" style="width: 5rem;">
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="funcionalidadesConteudo">
+                        <button class="btnOpenModal" onclick="openModal('modalSombra')"><img
+                                src="./assets/saibaMais/Shade_Idle.png"></button>
+                        <h4>Sombra</h4>
+                    </div>
+
+                    <div class="modal-container" id="modalSombra">
+                        <div class="modal">
+                            <div class="tituloInfo">
+                                <div class="btns">
+                                    <button class="btnOK" onclick="closeModal('modalSombra')">X</button>
+                                </div>
+                                <h2>Sombra</h2>
+                            </div>
+
+                            <div class="conteudoModal">
+                                <span>
+                                    Caso o Knight perca todas suas máscaras ele morre e retorna para o último banco que
+                                    se
+                                    sentou.
+                                    Ele retorna sem seus geos e com sua alma "quebrada" (com menos capacidade). Mas nem
+                                    tudo
+                                    está perdido! Para recuperara-los basta o jogador retornar ao local que morreu.
+                                    Chegando
+                                    lá,
+                                    encontrará a Sombra, uma cópia exata do Knight, ela flutua e é capaz de realizar
+                                    qualquer ataque
+                                    que ele tenha aprendido. Ao derrotá-la, o jogador recupera tudo, caso ele acabe
+                                    morrendo
+                                    de novo
+                                    antes de fazer isso (para própria Sombra ou para outra coisa) ele perde todos seus
+                                    geos
+                                    mas sua
+                                    capacidade de alma volta ao normal.
+                                </span>
+                                <img src="./assets/saibaMais/Shade_Idle.png" style="width: 5rem;">
+                            </div>
+
+
+
+
+                        </div>
+                    </div>
+
+
+                    <div class="funcionalidadesConteudo">
+                        <button class="btnOpenModal" onclick="openModal('modalAmuletos')"><img
+                                src="./assets/saibaMais/Charm_Notch.png"></button>
+                        <h4>Amuletos</h4>
+                    </div>
+
+                    <div class="modal-container" id="modalAmuletos">
+                        <div class="modal">
+                            <div class="tituloInfo">
+                                <div class="btns">
+                                    <button class="btnOK" onclick="closeModal('modalAmuletos')">X</button>
+                                </div>
+                                <h2>Amuletos</h2>
+                            </div>
+
+
+                            <div class="conteudoModal">
+                                <span>
+                                    Os amuletos dão ao Knight habilidades especiais ou aumentam algum status ou feitiço
+                                    dele.
+                                    Eles são itens equipáveis, sendo necessário sentar-se em um banco para fazer isso.
+                                    Cada amuleto possui uma quantidade de encaixes que consome ao ser equipado, dessa
+                                    forma
+                                    algumas
+                                    combinações de amuletos não são possíveis. O jogador começa com 3 encaixes, mas é
+                                    possível
+                                    adquirir encaixes explorando o mundo com um máximo possível de 11 encaixes.
+                                </span>
+                                <div class="imagensAmuletos">
+                                    <img src="./assets/saibaMais/Charm_Notch.png" style="width: 5rem;">
+                                    <img src="./assets/saibaMais/400px-Charms_Set_1.png" style="width: 15rem;">
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="funcionalidadesConteudo">
+                        <button class="btnOpenModal" onclick="openModal('modalTuneis')"><img
+                                src="./assets/saibaMais/tuneis.png" style="width: 5rem;"></button>
+                        <h4>Os Túneis</h4>
+                    </div>
+
+                    <div class="modal-container" id="modalTuneis">
+                        <div class="modal">
+                            <div class="tituloInfo">
+                                <div class="btns">
+                                    <button class="btnOK" onclick="closeModal('modalTuneis')">X</button>
+                                </div>
+                                <h2>Os Túneis</h2>
+                            </div>
+
+                            <div class="conteudoModal">
+                                <span>
+                                    Os túneis são uma forma de se locomover pelo mapa de forma rápida, para isso é
+                                    necessário
+                                    desbloquear suas estações através de geos. Os túneis foram feitos pelos
+                                    besouros-cervos,
+                                    que transportavam os moradores de Hallownest pelas áreas do mapa que possuíam
+                                    estações.
+                                    No momento atual do jogo, com a ruína do reino, os túneis foram fechados, por isso é
+                                    necessário
+                                    pagar uma quantia para reativá-los, e apenas um besouro-cervo restou, que apesar de
+                                    estar com a
+                                    memória prejudicada, se mantem fiel ao seu papel de transportador.
+                                </span>
+                                <img src="./assets/saibaMais/tuneis.png" style="width: 4rem;">
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="footerTamanho">
+        <div class="footer">
+            <img class="emailFooter" src="./assets/imagens/images-removebg-preview.png" alt="">
+            <p>Contate-me: marilia.araujo@sptech.school</p>
+        </div>
+    </div>
+</body>
+<script src="./js/saibaMais.js"></script>
+
+</html>

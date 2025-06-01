@@ -29,7 +29,7 @@ body {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-      flex-direction: row;
+    flex-direction: row;
     flex-wrap: nowrap;
 }
 
@@ -38,7 +38,7 @@ body {
 
 .logo {
     width: 20%;
-    
+
 }
 
 .lado {
@@ -142,36 +142,42 @@ body {
 
 .tudoMetroidvania {
     background-image: url("../assets/pagInicial/MetroidVaniaFundoNovo.jpg");
-    background-size:cover;
+    background-size: cover;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     display: flex;
     color: rgb(255, 255, 255);
 }
-.imagemMetroid img{
+
+.imagemMetroid img {
     width: 7rem;
     border-radius: 15px;
 }
-.imagemCastelvania img{
+
+.imagemCastelvania img {
     width: 7rem;
     border-radius: 15px;
     margin-left: 1rem;
 }
-.imagemCastelvania{
+
+.imagemCastelvania {
     margin-left: 3rem;
 }
-.imagemCastelvania p{
+
+.imagemCastelvania p {
     font-family: "Share Tech", sans-serif;
     color: #d9d9dc;
 
 }
-.imagemMetroid p{
-        font-family: "Share Tech", sans-serif;
+
+.imagemMetroid p {
+    font-family: "Share Tech", sans-serif;
     color: #d9d9dc;
 
 }
-.imagensMetroidvania{
+
+.imagensMetroidvania {
     display: flex;
     flex-direction: row;
     margin-left: 3rem;
@@ -198,15 +204,15 @@ body {
 
 .textoMetroidvania h1 {
     margin-bottom: 1%;
-    
+
 
 }
 
-.tamanhoIntro{
-      width: 100vw;
+.tamanhoIntro {
+    width: 100vw;
     height: 130vh;
     display: flex;
-     background: #45496b;
+    background: #45496b;
     background: linear-gradient(90deg, rgba(22, 25, 46, 1) 0%, rgba(39, 42, 71, 1) 50%, rgb(11, 13, 25) 100%);
 }
 
@@ -215,10 +221,11 @@ body {
     color: rgb(168, 169, 197);
     width: 90%;
     justify-self: center;
-    text-align:justify;
+    text-align: justify;
     font-weight: 100;
 }
-.introTexto h1{
+
+.introTexto h1 {
     justify-self: center;
     margin-bottom: 3rem;
 }
@@ -237,19 +244,21 @@ body {
     border-radius: 30px;
 }
 
-.sePerderTamanho{
+.sePerderTamanho {
     width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
 }
+
 .sePerderFundo {
     background-image: url("../assets/pagInicial/fundoDirtmouthCortado.png");
     background-size: cover;
     height: 100vh;
     flex-direction: column;
 }
-.sePerderTexto{
+
+.sePerderTexto {
     padding: 2rem;
     text-align: justify;
 }
@@ -261,6 +270,7 @@ body {
     max-width: 100%;
     width: 13%;
 }
+
 .imagem {
     display: flex;
     justify-content: center;
@@ -290,6 +300,7 @@ body {
     font-weight: 300;
 
 }
+
 .sePerderTexto h1 {
     font-weight: 300;
     align-self: center;
@@ -330,26 +341,30 @@ body {
     margin-left: 5rem;
 }
 
-.retangulo h2{
+.retangulo h2 {
     font-family: "Share Tech", sans-serif;
 }
-.retangulo form a{
+
+.retangulo form a {
     text-decoration: none;
     color: #565EFA;
 }
 
-.retangulo p{
+.retangulo p {
     font-family: "Share Tech", sans-serif;
     margin-right: 6dvh;
 }
-.retangulo form{
+
+.retangulo form {
     margin-top: 2rem;
 }
-.formulario{
+
+.formulario {
     display: flex;
     flex-direction: row;
 }
-.formulario input{
+
+.formulario input {
     width: 20rem;
     height: 1rem;
     align-self: center;
@@ -357,7 +372,7 @@ body {
     border-style: none;
 }
 
-.retangulo  .button{
+.retangulo .button {
     display: flex;
     justify-self: center;
     border-radius: 10px;
@@ -370,12 +385,13 @@ body {
     margin-left: 1rem;
     cursor: pointer;
 }
-.retangulo  .button img{
+
+.retangulo .button img {
     width: 60%;
 }
 
 /*CADASTRO*/
-.paginaTamanhoCadastro{
+.paginaTamanhoCadastro {
     width: 100vw;
     height: 150vh;
     display: flex;
@@ -391,7 +407,8 @@ body {
     padding: 0;
     height: 150vh;
 }
-.retanguloCadastro{
+
+.retanguloCadastro {
     margin-top: 3rem;
     color: white;
     background-color: rgb(0, 0, 0, 0.5);
@@ -407,7 +424,7 @@ body {
     font-family: "Share Tech", sans-serif;
 }
 
-.textoFormularioCadastro input{
+.textoFormularioCadastro input {
     width: 25rem;
     height: 1rem;
     align-self: center;
@@ -415,14 +432,14 @@ body {
     border-style: none;
 }
 
-.retanguloCadastro form a{
+.retanguloCadastro form a {
     text-decoration: none;
     color: #565EFA;
     justify-self: center;
     display: flex;
 }
 
-.retanguloCadastro  .button{
+.retanguloCadastro .button {
     display: flex;
     justify-self: center;
     border-radius: 10px;
@@ -435,7 +452,8 @@ body {
     margin-left: 1rem;
     cursor: pointer;
 }
-.retanguloCadastro  .button img{
+
+.retanguloCadastro .button img {
     width: 60%;
 }
 
@@ -449,7 +467,7 @@ body {
 
 .imagemFundoCuriosidades {
     background-image: url(../assets/imagens/fundos.png);
-   background-attachment: fixed;
+    background-attachment: fixed;
 }
 
 .curiosidadesConteudo {
@@ -479,10 +497,12 @@ body {
 .topico {
     margin: 5%;
 }
-.curiosidadesConteudo h3{
+
+.curiosidadesConteudo h3 {
     font-weight: 100;
 }
-.footerTamanho{
+
+.footerTamanho {
     height: 10vh;
     width: 100%;
     display: flex;
@@ -513,7 +533,7 @@ body {
 .TamanhoConquistas {
     width: 100%;
     height: 100%;
-  
+
 }
 
 .imagemFundoConquistas {
@@ -522,8 +542,8 @@ body {
 
 }
 
-.retanguloConquistas{
-    background-color: rgb(0, 0, 0,0.5);
+.retanguloConquistas {
+    background-color: rgb(0, 0, 0, 0.5);
     width: 85%;
     border-radius: 2rem;
     justify-self: center;
@@ -534,58 +554,61 @@ body {
 }
 
 
-.tituloConquista{
+.tituloConquista {
     margin-top: 5%;
     align-self: center;
     justify-self: center;
 }
 
-.divisao{
+.divisao {
     margin-left: 5%;
-    
+
 }
+
 .conquista {
     display: flex;
     flex-direction: row;
-    align-items: center; 
-    gap: 1rem; 
+    align-items: center;
+    gap: 1rem;
     margin-bottom: 1rem;
 }
 
-.checkbox input{
-    width: 30px; 
+.checkbox input {
+    width: 30px;
     height: 30px;
 }
 
-.KPIDiferente{
+.KPIDiferente {
     display: flex;
     flex-direction: row;
     margin-left: 10%;
 }
+
 .conquista img {
-    width: 100px;         
-    height: 100px;        
-    object-fit: contain;  
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
 }
-.conquistaTexto h4{
+
+.conquistaTexto h4 {
     font-family: "Share Tech", sans-serif;
 }
 
-.conquistaTexto h5{
+.conquistaTexto h5 {
     font-family: "Share Tech", sans-serif;
     margin-right: 3%;
     color: gray;
-}   
+}
 
-.retanguloConquistasPosLogin{
-    background-color: rgb(0, 0, 0,0.5);
+.retanguloConquistasPosLogin {
+    background-color: rgb(0, 0, 0, 0.5);
     width: 100%;
     justify-self: center;
     color: white;
     display: flex;
 }
 
-.TamanhoConquistasTopo{
+.TamanhoConquistasTopo {
     width: 100%;
     height: 50%;
     display: flex;
@@ -593,24 +616,24 @@ body {
     flex-direction: column;
 }
 
-.imagemFundoConquistasTopo{
+.imagemFundoConquistasTopo {
     background-image: url('../assets/fundoConquistas\ .jpg');
     background-size: cover;
 }
 
-.dashboard1{
+.dashboard1 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.KPIS{
+.KPIS {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.ultimaConquista{
+.ultimaConquista {
     background-color: #1c1c1d;
     border-radius: 1rem;
     display: flex;
@@ -620,7 +643,8 @@ body {
     margin-left: 14%;
     margin-bottom: 2%;
 }
-.kpiConquistaAlcancada{
+
+.kpiConquistaAlcancada {
     background-color: #1c1c1d;
     border-radius: 1rem;
     display: flex;
@@ -633,7 +657,7 @@ body {
     height: 5rem;
 }
 
-.kpiConquistaFalta{
+.kpiConquistaFalta {
     background-color: #1c1c1d;
     border-radius: 1rem;
     display: flex;
@@ -647,34 +671,35 @@ body {
 }
 
 
-.kpiUltimaKpi{
+.kpiUltimaKpi {
     display: flex;
     flex-direction: row;
     gap: 2rem;
 }
 
-.textoKPI{
+.textoKPI {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    
+
 }
 
-.textoKPI .dataHorario{
+.textoKPI .dataHorario {
     font-family: "Share Tech", sans-serif;
     color: gray;
 }
 
-.textoKPI .descricao{
+.textoKPI .descricao {
     font-family: "Share Tech", sans-serif;
 }
 
-.User{
-   margin-left: 20%;
+.User {
+    margin-left: 20%;
     display: flex;
     flex-direction: row;
 }
-.graficos{
+
+.graficos {
     background-color: #1c1c1d;
     display: flex;
     flex-direction: column;
@@ -683,32 +708,33 @@ body {
     width: 40%;
     border-radius: 2rem;
 }
-.graficos h4 span{
+
+.graficos h4 span {
     text-decoration: underline;
 }
 
-.graficos h4 a{
+.graficos h4 a {
     text-decoration: none;
     color: gray;
 }
 
-.Usuario{
+.Usuario {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 16%;
 }
 
-.username{
+.username {
     font-family: "Share Tech", sans-serif;
-    font-size:2rem;
+    font-size: 2rem;
 }
 
-.imagemUser img{
+.imagemUser img {
     width: 120%;
 }
 
-.tituloH3{
+.tituloH3 {
     margin-left: 4%;
 }
 
@@ -717,7 +743,7 @@ body {
 .tamanhoDadosGerais {
     width: 100%;
     height: 100%;
-  
+
 }
 
 .imagemFundoDadosGerais {
@@ -725,7 +751,7 @@ body {
     background-attachment: fixed;
 }
 
-.dashboard2{
+.dashboard2 {
     background-color: rgb(0, 0, 0, 0.8);
     width: 90%;
     display: flex;
@@ -737,21 +763,21 @@ body {
     margin-bottom: 2%;
 }
 
-.dashboard2 h1{
+.dashboard2 h1 {
     color: white;
     align-self: center;
     justify-self: center;
 }
 
 .graficoLinha {
-    background-color:#1c1c1d;
+    background-color: #1c1c1d;
     width: 70%;
     align-self: center;
     justify-self: center;
-    
+
 }
 
-.KPIDash2{
+.KPIDash2 {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -761,36 +787,235 @@ body {
     margin-bottom: 2%;
 }
 
-.mediaConquistaTempo{
-    background-color:#1c1c1d;
+.mediaConquistaTempo {
+    background-color: #1c1c1d;
     width: 30%;
     border-radius: 1rem;
 }
-.mediaConquistaTempo h5{
+
+.mediaConquistaTempo h5 {
     align-self: center;
     justify-self: center;
 }
-.kpiMediaPura span{
+
+.kpiMediaPura span {
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: large;
 }
-.qtdDias{
-    background-color:#1c1c1d;
+
+.qtdDias {
+    background-color: #1c1c1d;
     width: 30%;
     border-radius: 1rem;
 }
 
-.qtdDias h5{
+.qtdDias h5 {
     align-self: center;
     justify-self: center;
     text-align: center;
 }
-.kpiQtdDiasPura span{
+
+.kpiQtdDiasPura span {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 2%;
     font-size: large;
+}
+
+/*SAIBA MAIS*/
+
+.tamanhoSaibaMais {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.imagemFundoSaibaMais {
+    background-image: url('../assets/saibaMais/fundoSaibaMaisNovo.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.retanguloSaibaMais {
+    color: white;
+    margin-bottom: 2%;
+    background: rgb(0, 0, 0, 0.8);
+    border-radius: 2.5rem;
+    width: 80%;
+    height: 100%;
+    margin-top: 5%;
+    margin-left: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sliderContainer {
+    display: flex;
+    width: 80%;
+    min-height: 80vh;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.retanguloSaibaMais h1 {
+    margin-top: 5%;
+}
+
+.retanguloSaibaMais button {
+    border-style: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.container-images {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+
+}
+
+.slider {
+    opacity: 0;
+    transition: opacity .2s;
+    position: absolute;
+    width: 100%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.slider p {
+    font-family: "Share Tech", sans-serif;
+}
+
+.on {
+    opacity: 1;
+}
+
+#botaoAnterior {
+    transform: rotate(180deg);
+}
+
+.imagemTitulo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/*Modal*/
+
+.btnOpenModal {
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.modal-container {
+    width: 100vw;
+    position: fixed;
+    top: 30px;
+    display: none;
+    justify-content: center;
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    background-color: rgb(23, 23, 23);
+    border-radius: 10px;
+    width: 60%;
+    gap: 4rem;
+}
+
+
+.modal span {
+    font-family: "Share Tech", sans-serif;
+    width: 70%;
+}
+
+.modal img {
+    width: 10rem;
+}
+
+.imagensAmuletos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-left: 3%;
+}
+
+.tituloInfo {
+    display: flex;
+    flex-direction: row;
+}
+
+.conteudoModal {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10%;
+}
+
+.active {
+    display: flex;
+}
+
+.active .modal {
+    animation: modal .4s;
+}
+
+span {
+    margin: 10px auto;
+}
+
+.btns {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.btns button {
+    font-size: medium;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.funcionalidades {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+.funcionalidadesConteudo {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-decoration: underline;
 }
