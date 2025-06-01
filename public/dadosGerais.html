@@ -11,55 +11,60 @@
 </head>
 
 <body onload="obterDados()">
-  <div class="tamanhoDadosGerais">
-    <div class="imagemFundoDadosGerais">
-      <div class="headerTamanho">
-        <div class="header">
-          <a href="posLogin.html">Página Inicial</a>
-          <a href="login.html">Saiba Mais</a>
-          <a href="CuriosidadesPosLogin.html">Curiosidades</a>
+    <div class="tamanhoDadosGerais">
+        <div class="imagemFundoDadosGerais">
+            <div class="headerTamanho">
+                <div class="header">
+                    <a href="posLogin.html">Página Inicial</a>
+                    <a href="login.html">Saiba Mais</a>
+                    <a href="CuriosidadesPosLogin.html">Curiosidades</a>
 
 
-          <img class="logo" src="./assets/imagens/logo.png">
+                    <img class="logo" src="./assets/imagens/logo.png">
 
 
-          <a href="conquistasPosLogin.html">Conquistas</a>
+                    <a href="conquistasPosLogin.html">Conquistas</a>
 
-          <a href="dadosGerais.html"><b>· Visão Geral</b></a>
+                    <a href="dadosGerais.html"><b>· Visão Geral</b></a>
 
-          <a href="index.html" onclick="limparSessao()">Sair</a>
+                    <a href="index.html" onclick="limparSessao()">Sair</a>
 
 
-        </div>
+                </div>
 
-      </div>
-
-      <div class="tituloH4DadosGerais">
-         <h4><span><b>· Sua Visão Geral</b></span> | <a href="#">Visão Geral Todos os Usuários</a></h4>
-      </div>
-
-     
-      <div class="dashboard2">
-            <div class="graficoLinha">
-              <canvas id="myChart"></canvas>
             </div>
-          <div class="mediaConquistaTempo"> 
-            <h4>Conquista por semana:</h4>
-            <div id="div_kpiMediaConquistaTempo"></div>
-        </div>
-    </div>
 
 
 
-    <div class="footerTamanho">
-      <div class="footer">
-        <img class="emailFooter" src="./assets/imagens/images-removebg-preview.png" alt="">
-        <p>Contate-me: marilia.araujo@sptech.school</p>
-      </div>
-    </div>
+
+            <div class="dashboard2">
+                <h1>Seu Trajeto</h1>
+                <div class="graficoLinha">
+                    <canvas id="myChart"></canvas>
+                </div>
+                <div class="KPIDash2">
+                    <div class="mediaConquistaTempo">
+                        <div class="kpiMediaPura" id="div_kpiMediaConquistaTempo"></div>
+                    </div>
+                
+                <div class="qtdDias">
+                    <div id="div_kpiQtdDias" class="kpiQtdDiasPura"></div>
+                </div>
+                </div>
+            </div>
+
+            
 
 
-    <script src="js/conquista.js"></script>
+            <div class="footerTamanho">
+                <div class="footer">
+                    <img class="emailFooter" src="./assets/imagens/images-removebg-preview.png" alt="">
+                    <p>Contate-me: marilia.araujo@sptech.school</p>
+                </div>
+            </div>
+
+
+            <script src="js/conquista.js"></script>
 </body>
 </body>
 <script>
@@ -75,39 +80,67 @@
                 plotarGrafico(data);
 
             })
-        .then(resposta2 => {
-            fetch(`/dashboards/kpiMedia/${fkusuario}`)
-            .then(res => res.json())
-            .then(data2 => {
-                mediaConquista(data2)
+            .then(resposta2 => {
+                fetch(`/dashboards/platina/${fkusuario}`)
+                    .then(res => res.json())
+                    .then(platina => {
+                        fetch(`/dashboards/kpiMedia/${fkusuario}/${platina}`)
+                            .then(res => res.json())
+                            .then(data2 => {
+                                mediaKPI(data2[0].media, platina)
+                            })
+                        fetch(`/dashboards/kpiQTD/${fkusuario}/${platina}`)
+                            .then(res => res.json())
+                            .then(data3 => {
+                                qtdKPI(data3[0].diferenca, platina)
+                            })
+                    })
             })
-        })
             .catch(function (err) {
                 console.log(err);
             })
 
     }
+
+    function mediaKPI(data2, platina){
+        
+        if(platina == 'true'){
+            div_kpiMediaConquistaTempo.innerHTML = `<h5>Conquistas por dia até platinar: </h5> <br> <span>${data2}</span> `
+        }else{
+            div_kpiMediaConquistaTempo.innerHTML =  `<h5>Conquistas por dia: </h5> <br> <span>${data2}</span> `
+        }
+    }
+
+    function qtdKPI(data3, platina){
+       
+        if(platina == 'true'){
+            div_kpiQtdDias.innerHTML = `<h5>Dias para platinar: </h5> <br> <span>${data3}</span> `
+        }else{
+            div_kpiQtdDias.innerHTML = `<h5>Dias passados desde a primeira conquista: </h5> <br> <span>${data3}</span>`
+        }
+    }
+
     function plotarGrafico(data) {
 
         var semanaGrafico = []
         var numeroConquista = []
 
         var soma = 0
-        for(var i = 0; i < data.length; i++){
+        for (var i = 0; i < data.length; i++) {
             var dataMontada = ''
 
-            for(var j = 0; j < 10;j++){
+            for (var j = 0; j < 10; j++) {
                 dataMontada += data[i].dia[j]
             }
-          
+
             semanaGrafico.push(dataMontada)
             soma += Number(data[i].contagem)
             numeroConquista.push(soma)
-            
-         
-            
+
+
+
         }
-        console.log('DATA',data, ' semanaGrafico', semanaGrafico, ' numeroConquista', numeroConquista)
+        
 
         const ctx = document.getElementById('myChart');
 

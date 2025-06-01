@@ -40,10 +40,67 @@ function graficoLinhaJogador(fkusuario) {
     `
     return database.executar(instrucaoSql);
 }
-function kpiMedia(fkusuario) {
+function platina(fkusuario) {
     var instrucaoSql = `
-       SELECT username FROM usuario WHERE idUsuario = '${fkusuario}'
+       SELECT CASE
+            WHEN COUNT(status) = 63 THEN 'true'
+            ELSE 'false'
+            END AS platina
+       FROM usuario_conquistas
+       WHERE fkusuario = ${fkusuario} AND status = 1;
     `
+    return database.executar(instrucaoSql);
+}
+
+function kpiMedia(fkusuario, platina) {
+
+    if (platina == 'true') {
+        var instrucaoSql = `
+       SELECT ROUND(((TIMESTAMPDIFF(DAY,
+                MIN(dataHorario),
+                MAX(dataHorario))) / (COUNT(status))),2) 
+                AS media
+            FROM usuario_conquistas
+            WHERE status = 1 AND fkusuario = ${fkusuario};
+
+    `
+    } else {
+        var instrucaoSql = `
+       SELECT ROUND(((TIMESTAMPDIFF(DAY, 
+            MIN(dataHorario), 
+            CURRENT_DATE)) / (COUNT(status))),2) 
+            AS media
+        FROM usuario_conquistas
+        WHERE status = 1 AND fkusuario = ${fkusuario};
+
+    `
+    }
+
+    return database.executar(instrucaoSql);
+}
+
+function kpiQTD(fkusuario, platina) {
+
+    if (platina) {
+      var instrucaoSql = `
+       SELECT TIMESTAMPDIFF(DAY,
+                MIN(dataHorario),
+                MAX(dataHorario))
+             AS diferenca
+        FROM usuario_conquistas
+        WHERE status = 1 AND fkusuario = ${fkusuario};
+    `
+    } else {
+           var instrucaoSql = `
+       SELECT TIMESTAMPDIFF(DAY,
+                MIN(dataHorario),
+                CURRENT_DATE)
+             AS diferenca
+        FROM usuario_conquistas
+        WHERE status = 1 AND fkusuario = ${fkusuario};
+    `
+    }
+
     return database.executar(instrucaoSql);
 }
 
@@ -52,5 +109,7 @@ module.exports = {
     ultimaConquistaBuscar,
     buscarUsername,
     graficoLinhaJogador,
-    kpiMedia
+    kpiMedia,
+    platina,
+    kpiQTD
 };

@@ -20,8 +20,18 @@ router.get("/graficoLinhaJogador/:fkusuario", function (req, res){
     dashboardController.graficoLinhaJogador(req, res);  
 });
 
-router.get("/kpiMedia/:fkusuario", function (req, res){
+router.get("/platina/:fkusuario", function (req, res){
+    dashboardController.platina(req, res);  
+});
+
+router.get("/kpiMedia/:fkusuario/:platina", function (req, res){
     dashboardController.kpiMedia(req, res);  
 });
+
+router.get("/kpiQTD/:fkusuario/:platina", function (req, res){
+    dashboardController.kpiQTD(req, res);  
+});
+
+
 
 module.exports = router;

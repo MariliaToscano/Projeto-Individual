@@ -53,14 +53,42 @@ function graficoLinhaJogador(req, res){
 
 function kpiMedia(req, res){
         const fkusuario = req.params.fkusuario
+        const platina = req.params.platina
 
-    dashboardModel.kpiMedia(fkusuario)
+    dashboardModel.kpiMedia(fkusuario, platina)
     .then(resultado => {
         res.json(resultado);
     })
     .catch(erro => {
-         console.error("Erro ao buscar username:", erro);
-            res.status(500).send("Erro ao buscar username.");
+         console.error("Erro ao buscar media:", erro);
+            res.status(500).send("Erro ao buscar media.");
+    })
+}
+
+function platina(req, res){
+        const fkusuario = req.params.fkusuario
+        const platina = req.params.platina
+
+    dashboardModel.platina(fkusuario, platina)
+    .then(resultado => {
+        res.json(resultado);
+    })
+    .catch(erro => {
+         console.error("Erro ao buscar qtd Dias:", erro);
+            res.status(500).send("Erro ao buscar qtd Dias.");
+    })
+}
+
+function kpiQTD(req, res){
+        const fkusuario = req.params.fkusuario
+
+    dashboardModel.kpiQTD(fkusuario)
+    .then(resultado => {
+        res.json(resultado);
+    })
+    .catch(erro => {
+         console.error("Erro ao buscar status platina:", erro);
+            res.status(500).send("Erro ao buscar status platina.");
     })
 }
 
@@ -69,5 +97,7 @@ module.exports = {
     ultimaConquistaBuscar,
     buscarUsername,
     graficoLinhaJogador,
-    kpiMedia
+    kpiMedia,
+    platina,
+    kpiQTD
 };
