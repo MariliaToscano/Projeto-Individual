@@ -7,8 +7,22 @@ function cadastrar1() {
     var confirmarSenhaVar = document.getElementById("ipt_confirmarSenha").value;
 
 
+    if (nomeVar == '' || usernameVar == '' || email == '' ||
+        senhaVar == '' || confirmarSenhaVar == ''
+    ) {
+        alert("Algum campo não preenchido")
+        return;
+    }
+
     if (senhaVar != confirmarSenhaVar) {
         alert("As senhas não coincidem.");
+        return;
+    }
+    var verificEmail = email.includes('@')
+    verificEmail = email.includes('.')
+
+    if (!verificEmail) {
+        alert('Email não conhecido!')
         return;
     }
 
@@ -28,18 +42,18 @@ function cadastrar1() {
                 throw new Error("Erro ao cadastrar usuário");
             }
 
-           
+
             return fetch(`/usuarios/buscar-id-usuario/${email}`);
-           
-           
+
+
         })
         .then((resposta2) => {
             if (!resposta2.ok) {
                 throw new Error("Erro ao buscar ID do usuario");
-           }
-            
-          return resposta2.json();
-       })
+            }
+
+            return resposta2.json();
+        })
         .then((dados) => {
             const idUsuario = dados.idUsuario;
 
@@ -48,7 +62,7 @@ function cadastrar1() {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
-                idUsuario
+                    idUsuario
                 }),
             })
         })
@@ -62,7 +76,7 @@ function cadastrar1() {
         })
         .catch((erro) => {
             console.error("Erro:", erro);
-            alert("Erro no cadastro. Verifique os campos e tente novamente.");
+            alert("Erro no cadastro. Email o username já estão em uso!");
         });
 }
 
