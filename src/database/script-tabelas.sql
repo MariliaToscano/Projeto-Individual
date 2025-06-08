@@ -10,6 +10,9 @@ email varchar(40) unique key,
 senha varchar(80)
 )auto_increment=100;
 
+insert into	usuario (nome, username, email, senha)
+	values ('Marilia Toscano', 'Mar', 'marilia.t.araujo@gmail.com', '123');
+
 create table conquistas(
 id int primary key auto_increment,
 nome varchar(45),
@@ -28,6 +31,7 @@ foreign key (fkusuario) references usuario(idUsuario),
 foreign key (fkconquista) references conquistas(id)
 );
 
+select * from conquistas;
 insert into conquistas(nome, imagem, descricao) 
 	value('Afortunado', '<img src="./assets/conquistas/Achievement_Charmed.png">', 'Adquira seu primeiro Amuleto'),
 		('Encantado', '<img src="./assets/conquistas/Achievement_Enchanted.png">', 'Adquira metade dos Amuletos de Hallownest.'),
@@ -93,3 +97,70 @@ insert into conquistas(nome, imagem, descricao)
         ('Alma e Sombra','<img src="./assets/conquistas/Achievement_Soul_&_Shade.png">','Complete o Panteão do Cavaleiro.'),
         ('Abrace o Vazio','<img src="./assets/conquistas/Achievement_Embrace_the_Void.png">','Ascenda no Panteão de Hallownest e tome o seu lugar no pico.');
         
+        
+        -- Inserção de conquistas para fkusuario = 100, fkconquista de 1 a 63
+INSERT INTO usuario_conquistas (fkusuario, fkconquista, dataHorario, status) VALUES
+(100, 1, '2022-01-24 21:05:00', true),
+(100, 2, '2022-01-28 17:22:00', true),
+(100, 3, '2022-02-10 19:50:00', true),
+(100, 4, '2022-01-28 17:22:00', true),
+(100, 5, '2022-02-10 17:04:00', true),
+(100, 6, '2022-01-28 17:22:00', true),
+(100, 7, '2022-01-28 17:22:00', true),
+(100, 8, '2022-01-24 20:57:00', true),
+(100, 9, '2022-01-28 17:22:00', true),
+(100, 10, '2022-01-25 22:40:00', true),
+(100, 11, '2022-01-28 17:22:00', true),
+(100, 12, '2022-01-28 17:22:00', true),
+(100, 13, '2022-03-02 13:04:00', true),
+(100, 14, '2022-01-28 17:22:00', true),
+(100, 15, '2022-01-28 17:22:00', true),
+(100, 16, '2022-01-28 17:22:00', true),
+(100, 17, '2022-01-26 17:33:00', true),
+(100, 18, '2022-01-28 17:22:00', true),
+(100, 19, '2022-01-28 17:22:00', true),
+(100, 20, '2022-03-14 18:04:00', true),
+(100, 21, '2022-01-28 17:22:00', true),
+(100, 22, '2022-01-28 17:22:00', true),
+(100, 23, '2022-03-02 12:27:00', true),
+(100, 24, '2022-01-28 17:22:00', true),
+(100, 25, '2022-01-28 17:30:00', true),
+(100, 26, '2022-01-28 17:45:00', true),
+(100, 27, '2022-02-07 10:09:00', true),
+(100, 28, null, false),
+(100, 29, '2022-02-10 16:32:00', true),
+(100, 30, '2022-02-10 13:27:00', true),
+(100, 31, '2022-01-28 19:00:00', true),
+(100, 32, '2022-02-10 17:04:00', true),
+(100, 33, '2022-02-12 01:08:00', true),
+(100, 34, '2022-01-28 15:00:00', true),
+(100, 35, '2022-01-28 18:30:00', true),
+(100, 36, '2022-01-28 19:30:00', true),
+(100, 37, '2022-01-28 16:45:00', true),
+(100, 38, '2022-02-12 00:42:00', true),
+(100, 39, null, false),
+(100, 40, null, false),
+(100, 41, '2022-04-20 17:04:00', true),
+(100, 42, '2022-04-21 14:24:00', true),
+(100, 43, null, false),
+(100, 44, null, false),
+(100, 45, null, false),
+(100, 46, null, false),
+(100, 47, '2022-01-28 08:15:00', true),
+(100, 48, '2022-01-28 09:30:00', true),
+(100, 49, '2022-04-18 21:16:00', true),
+(100, 50, '2022-02-12 00:39:00', true),
+(100, 51, '2022-03-06 18:54:00', true),
+(100, 52, '2022-03-06 18:48:00', true),
+(100, 53, '2022-03-06 18:50:00', true),
+(100, 54, '2022-03-02 12:25:00', true),
+(100, 55, '2022-04-19 19:09:00', true),
+(100, 56, '2022-02-10 12:33:00', true),
+(100, 57, '2022-03-14 17:40:00', true),
+(100, 58, null, false),
+(100, 59, '2022-04-24 20:00:00', true),
+(100, 60, '2022-04-25 23:05:00', true),
+(100, 61, null, false),
+(100, 62, null, false),
+(100, 63, null, false);
+
