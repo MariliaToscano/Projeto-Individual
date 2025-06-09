@@ -993,9 +993,6 @@ body {
     display: flex;
 }
 
-.active .modal {
-    animation: modal .4s;
-}
 
 span {
     margin: 10px auto;
